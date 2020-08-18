@@ -7,15 +7,24 @@
 html {
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-size: 52.5%;
+	@media (min-width: 768px) {
+		font-size: 57.5%;
+	}
+	@media (min-width: 1200px) {
+		font-size: 62.5%;
+	}
 }
 
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	font-size: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	font-size: 1.6rem;
 	font-weight: 400;
-	line-height: 1.5;
-	color: #1c1c1c;
+	line-height: 1.2;
+	color: #000000;
 	background-color: #ffffff;
 }
 
@@ -30,10 +39,6 @@ main,
 nav,
 section {
 	display: block;
-}
-
-[tabindex="-1"]:focus {
-	outline: 0 !important;
 }
 
 hr {
@@ -120,15 +125,14 @@ sup {
 }
 
 sub {
-	bottom: -.25em;
+	bottom: -0.25em;
 }
 
 sup {
-	top: -.5em;
+	top: -0.5em;
 }
 
 a {
-	color: #1C1C1C;
 	text-decoration: none;
 	background-color: transparent;
 }
@@ -137,7 +141,8 @@ pre,
 code,
 kbd,
 samp {
-	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+		monospace;
 	font-size: 1em;
 }
 
@@ -169,7 +174,6 @@ table {
 caption {
 	padding-top: 0;
 	padding-bottom: 0;
-	color: #6c757d;
 	text-align: left;
 	caption-side: bottom;
 }
@@ -196,6 +200,7 @@ textarea {
 	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
+	appearance: none;
 }
 
 button,
@@ -210,13 +215,6 @@ select {
 
 select {
 	word-wrap: normal;
-}
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-	-webkit-appearance: button;
 }
 
 button:not(:disabled),

@@ -54,17 +54,7 @@
 	"media-upxxl": {
 		"scope": "css,less,scss",
 		"prefix": "mdu2xl",
-		"body": ["@media (min-width: 1440px) {", "\t$0", "}"]
-	},
-	"media-upxxxl": {
-		"scope": "css,less,scss",
-		"prefix": "mdu3xl",
-		"body": ["@media (min-width: 1600px) {", "\t$0", "}"]
-	},
-	"media-upxxxxl": {
-		"scope": "css,less,scss",
-		"prefix": "mdu4xl",
-		"body": ["@media (min-width: 1720px) {", "\t$0", "}"]
+		"body": ["@media (min-width: 1360px) {", "\t$0", "}"]
 	},
 	"media-down": {
 		"scope": "css,less,scss",
@@ -84,7 +74,7 @@
 	"media-downlg": {
 		"scope": "css,less,scss",
 		"prefix": "mddlg",
-		"body": ["@media (max-width: 1024.98px) {", "\t$0", "}"]
+		"body": ["@media (max-width: 1024px) {", "\t$0", "}"]
 	},
 	"media-downxl": {
 		"scope": "css,less,scss",
@@ -94,22 +84,7 @@
 	"media-downxxl": {
 		"scope": "css,less,scss",
 		"prefix": "mdd2xl",
-		"body": ["@media (max-width: 1439.98px) {", "\t$0", "}"]
-	},
-	"media-downxxxl": {
-		"scope": "css,less,scss",
-		"prefix": "mdd3xl",
-		"body": ["@media (max-width: 1599.98px) {", "\t$0", "}"]
-	},
-	"media-downxxxxl": {
-		"scope": "css,less,scss",
-		"prefix": "mdd4xl",
-		"body": ["@media (max-width: 1719.98px) {", "\t$0", "}"]
-	},
-	"typography": {
-		"scope": "css,less,scss",
-		"prefix": "f",
-		"body": ["font-size: $1;", "font-weight: $2;", "color: $3;", "$0"]
+		"body": ["@media (max-width: 1359.98px) {", "\t$0", "}"]
 	},
 	"translateX": {
 		"scope": "css,less,scss",
@@ -130,7 +105,6 @@
 		"scope": "css,less,scss",
 		"prefix": "fcc",
 		"body": [
-			"display: flex;",
 			"justify-content: center;",
 			"align-items: center;"
 		]
@@ -142,8 +116,8 @@
 	},
 	"transition": {
 		"scope": "css,less,scss",
-		"prefix": "tsa",
-		"body": ["transition: all .3s ease;"]
+		"prefix": "treo",
+		"body": ["transition: all .3s ease-in-out;"]
 	},
 	"line-clamp": {
 		"scope": "css,less,scss",
@@ -177,9 +151,13 @@
 			"max-width: 100%;"
 		]
 	},
-	"col-d": {
+	"col-define": {
 		"scope": "css,less,scss",
 		"prefix": "cold",
-		"body": ["-ms-flex: 0 0 $1;", "flex: 0 0 $1;", "max-width: $1;$0"]
+		"body": [
+			"-ms-flex: 0 0 $1;", 
+			"flex: 0 0 $1;", 
+			"max-width: $1;$0"
+		]
 	}
 }

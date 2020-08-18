@@ -1,5 +1,8 @@
 export default class Tab {
-	constructor(selector) {
+	selector: HTMLElement;
+	navigationItems: Array<HTMLElement>;
+	contentList: Array<HTMLElement>;
+	constructor(selector: string) {
 		this.selector = document.querySelector(selector);
 		if (this.selector) {
 			this.navigationItems = Array.from(
@@ -13,19 +16,21 @@ export default class Tab {
 	}
 
 	changeTabWhenClicked() {
-		this.navigationItems.forEach((element, index) => {
+		this.navigationItems.forEach((element: HTMLElement, index: number) => {
 			element.addEventListener("click", (e) => {
 				e.preventDefault();
 				const tabTarget = element.attributes["toggle-for"].value;
 				const targetDOM = Array.from(
 					this.selector.querySelectorAll(`[tab-id='${tabTarget}']`),
 				);
-				this.navigationItems.forEach((eleClicked, eleClickedIndex) => {
-					if (eleClickedIndex != index) {
-						eleClicked.classList.remove("active");
-					}
-				});
-				this.contentList.forEach((tabContentElement) => {
+				this.navigationItems.forEach(
+					(eleClicked: HTMLElement, eleClickedIndex: number) => {
+						if (eleClickedIndex != index) {
+							eleClicked.classList.remove("active");
+						}
+					},
+				);
+				this.contentList.forEach((tabContentElement: HTMLElement) => {
 					if (
 						tabContentElement.attributes["tab-id"].value !=
 						tabTarget
@@ -35,11 +40,11 @@ export default class Tab {
 					}
 				});
 				element.classList.add("active");
-				targetDOM.forEach((item) => {
+				targetDOM.forEach((item: HTMLElement) => {
 					item.style.display = "block";
 				});
 				setTimeout(() => {
-					targetDOM.forEach((item) => {
+					targetDOM.forEach((item: HTMLElement) => {
 						item.classList.add("show");
 					});
 				}, 50);

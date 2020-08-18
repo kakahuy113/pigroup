@@ -12,7 +12,7 @@ export default (_) => {
 					compatibility: "ie8",
 				}),
 			)
-			.pipe(_.gulp.dest("_dist/css"));
+			.pipe(_.gulp.dest("dist/css"));
 	}
 
 	function js() {
@@ -24,7 +24,7 @@ export default (_) => {
 			})
 			.pipe(_.concat("core.min.js"))
 			.pipe(_.stripComment())
-			.pipe(_.gulp.dest("_dist/js"));
+			.pipe(_.gulp.dest("dist/js"));
 	}
 
 	return {

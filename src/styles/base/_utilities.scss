@@ -1,10 +1,10 @@
 [hidden],
-.d-n,
-.hidden {
+.hidden,
+.d-none {
 	display: none !important;
 }
 
-.dekstop {
+.desktop {
 	@media (max-width: 1024px) {
 		display: none !important;
 	}
@@ -16,99 +16,84 @@
 	}
 }
 
-.d-b {
+.d-block {
 	display: block;
 }
 
-.d-ib {
+.d-inline-block {
 	display: inline-block;
 }
 
-.d-f {
+.d-flex {
 	display: flex;
 }
 
-.d-if {
+.d-inline-flex {
 	display: inline-flex;
 }
 
-.fw-w {
+.flex-wrap {
 	flex-wrap: wrap;
 }
 
-.ai-c {
+.align-center {
 	align-items: center;
 }
 
-.ai-fe {
+.align-end {
 	align-items: flex-end;
 }
 
-.as-c {
-	align-self: center;
-}
-
-.as-fe {
-	align-self: flex-end;
-}
-
-.jc-c {
+.justify-center {
 	justify-content: center;
 }
 
-.jc-fe {
+.justify-end {
 	justify-content: flex-end;
 }
 
-.jc-sb {
+.justify-space-between {
 	justify-content: space-between;
 }
 
-.fcc {
-	display: flex;
+.flex-center {
 	justify-content: center;
 	align-items: center;
 }
 
-// List, ul, ol, dl
-.lst-n {
+.list-style-none {
 	list-style-type: none;
 }
 
-// Margin
-.ml-at {
+.ml-auto {
 	margin-left: auto;
 }
 
-.mr-at {
+.mr-auto {
 	margin-right: auto;
 }
 
-.mx-at {
+.mx-auto {
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.ov-h {
+.overflow-hidden {
 	overflow: hidden;
 }
 
-.fs-i {
+.font-italic {
 	font-style: italic;
 }
 
-.tt-u {
+.text-uppercase {
 	text-transform: uppercase;
 }
 
-.tt-c {
+.text-capitalize {
 	text-transform: capitalize;
 }
 
-.ta-c {
+.text-center {
 	text-align: center;
-}
-
-.td-u {
-	text-decoration: underline;
 }

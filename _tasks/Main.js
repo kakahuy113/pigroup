@@ -13,13 +13,13 @@ export default (_) => {
 					pretty: "\t",
 				}),
 			)
-			.pipe(_.gulp.dest("_dist"));
+			.pipe(_.gulp.dest("dist"));
 	}
 
-	function css(glob) {
+	function css() {
 		return _.gulp
-			.src(glob)
-			.pipe(_.sourcemap.init())
+			.src("src/styles/**.scss", "!src/styles/_*.scss")
+			.pipe(_.sourcemaps.init())
 			.pipe(
 				_.sass({
 					sync: true,
@@ -46,70 +46,71 @@ export default (_) => {
 					suffix: ".min",
 				}),
 			)
-			.pipe(_.sourcemap.write("."))
-			.pipe(_.gulp.dest("_dist/css"));
+			.pipe(_.sourcemaps.write("."))
+			.pipe(_.gulp.dest("dist/css"));
 	}
 
-	function jsBrowserify() {
+	function tsBrowserify() {
 		return _.browserify({
 			basedir: ".",
-			entries: ["src/js/main.js"],
 			debug: true,
-			sourceMaps: true,
+			entries: ["src/scripts/main.ts"],
+			cache: {},
+			packageCache: {},
 		})
-			.transform(
-				_.babelify.configure({
-					presets: ["@babel/preset-env"],
-					plugins: [
-						"@babel/plugin-transform-classes",
-						"@babel/plugin-transform-async-to-generator",
-					],
-					extensions: [".js"],
-				}),
-			)
+			.plugin(_.tsify)
+			.transform("babelify", {
+				presets: ["@babel/env"],
+				plugins: [
+					"@babel/plugin-proposal-class-properties",
+					"@babel/plugin-proposal-async-generator-functions",
+				],
+				extensions: [".ts", ".js"],
+			})
 			.bundle()
 			.on("error", function (err) {
 				console.error(err.toString());
 				this.emit("end");
 			})
-			.pipe(_.source("main.js"))
+			.pipe(_.source("main.min.js"))
 			.pipe(_.buffer())
-			.pipe(_.sourcemap.init({ loadMaps: true }))
-			.pipe(_.uglifyES())
-			.pipe(
-				_.rename({
-					suffix: ".min",
-				}),
-			)
-			.pipe(_.sourcemap.write("."))
-			.pipe(_.gulp.dest("_dist/js"));
+			.pipe(_.sourcemaps.init({ loadMaps: true }))
+			.pipe(_.uglify())
+			.pipe(_.sourcemaps.write("./"))
+			.pipe(_.gulp.dest("dist/js"));
 	}
 
 	function jsNormalBabel() {
 		return _.gulp
-			.src(["src/js/**.js", "!src/js/main.js"])
+			.src(["src/scripts/**.js"])
 			.pipe(
 				_.plumber(function (err) {
 					console.error(err.toString());
 					this.emit("end");
 				}),
 			)
-			.pipe(_.sourcemap.init())
-			.pipe(_.babel())
-			.pipe(_.uglify())
+			.pipe(
+				_.babel({
+					presets: ["@babel/env"],
+				}),
+			)
+			.pipe(
+				_.babelMinify({
+					keepClassName: true,
+				}),
+			)
 			.pipe(
 				_.rename({
 					suffix: ".min",
 				}),
 			)
-			.pipe(_.sourcemap.write("."))
-			.pipe(_.gulp.dest("_dist/js"));
+			.pipe(_.gulp.dest("dist/js"));
 	}
 
 	return {
 		html,
 		css,
-		jsBrowserify,
+		tsBrowserify,
 		jsNormalBabel,
 	};
 };

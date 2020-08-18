@@ -1,5 +1,22 @@
+interface MappingOptions {
+	mobileMethod: string;
+	mobileNode: string;
+	desktopMethod: string;
+	desktopNode: string;
+	breakpoint: string | number;
+}
+
 export default class Mapping {
-	constructor(selector, option) {
+	selector: string;
+	mobileMethod: string;
+	mobileNode: string;
+	desktopMethod: string;
+	desktopNode: string;
+	breakpoint: string | number;
+	selectorNode: HTMLElement;
+	bpListener: MediaQueryList;
+
+	constructor(selector: string, option: MappingOptions) {
 		this.selector = selector;
 		this.mobileMethod = option.mobileMethod;
 		this.mobileNode = option.mobileNode;
