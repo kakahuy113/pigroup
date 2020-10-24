@@ -286,11 +286,21 @@
 		text-align: center;
 		.img {
 			margin-bottom: 25px;
+			svg {
+				transition: .5s all ease-in-out;
+			}
 		}
 		@media (max-width: 1024.98px) {
 			margin: 0 auto;
 		}
-	
+		@media (min-width: 1025px) {
+			&:hover {
+				svg {
+					transform: rotateY(180deg);
+					transition: .5s all ease-in-out;
+				}
+			}
+		};
 	}
 	p {
 		font-size: 1.8rem;
@@ -543,9 +553,13 @@
 	padding: 100px 0;
 	background: url(../assets/img/bg-popup-rule.png) no-repeat;
 	background-size: 100% 100%;
+	.main-title-img {
+		margin-bottom: 15px;
+	}
 	.sub-title {
 		font-size: 2.5rem;
 		color: map-get($color, main-8);
+		margin-bottom: 60px;
 	}
 	.popup__wrapper {
 		overflow-y: auto;
@@ -553,7 +567,7 @@
 	}
 	.rule-content {
 		p {
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 			font-size: 1.8rem;
 			color: map-get($color, main-8);
 			span {
@@ -561,7 +575,7 @@
 			}
 		}
 		.prize-table {
-			margin-top: 30px;
+			margin-top: 50px;
 			background: rgba($color: #000000, $alpha: .16);
 			border-radius: 32px;
 			overflow: hidden;
@@ -848,7 +862,7 @@
 	width: 100%;
 	overflow-y: auto;
 	padding: 200px 0 100px 0;
-	// background: url(../assets/img/bg-firework.png) no-repeat;
+	background: url(../assets/img/bg-firework.png) no-repeat;
 	background-size: 100% 100%;
 	.popup__wrapper {
 		max-width: 650px;
@@ -877,11 +891,40 @@
 	}
 }
 
-canvas {
+.demo {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
 	pointer-events: none;
+}
+
+#noti,
+#noti-2 {
+	border-radius: 17px;
+	text-align: center;
+	max-width: 627px;
+	p {
+		font-family: Lato-Black;
+		font-size: 2.5rem;
+		color: map-get($color, main-4);
+	}
+	.fancybox-button.fancybox-close-small {
+		display: none;
+	}
+	.hint {
+		margin-top: 30px;
+		.playgame__wrapper {
+			&::after {
+				content: none;
+			}
+			.btn-playgame {
+				&::after,
+				&::before {
+					content: none;
+				}
+			}
+		}
+	}
 }
