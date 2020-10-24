@@ -1,1 +1,26 @@
 header
+	.container.h-100
+		.container-custom.size-1365px.h-100
+			.header__wrapper.h-100
+				.header--logo
+					a(href="index.html").img
+						img(src="./assets/img/logo.png", alt="Logo")
+				.hambuger-menu
+					span
+				.header--menu
+					.navBar.h-100
+						.navItem
+							a(href="javscript:;")
+								img.svg(src="./assets/img/home.svg", alt="home")
+						.navItem
+							a(href="javascript:;" data-scroll-to="1") Giải Thưởng
+						.navItem
+							a(href="javascript:;" data-scroll-to="2") Thể Lệ Chương Trình
+						.navItem
+							a(href="javascript:;" data-scroll-to="3") Thông Tin Dụ Án
+						.navItem
+							a(data-fancybox data-src="#quiz-answer" href="javascript:;").playgame__wrapper
+								.btn.btn-playgame Chơi Game
+					.playgame-mobile.mobile
+						a(data-fancybox data-src="#quiz-answer" href="javascript:;").playgame__wrapper
+							.btn.btn-playgame Chơi Game

@@ -1,0 +1,8 @@
+.mainBanner
+	.mainBanner__wrapper
+		.swiper-container
+			.swiper-wrapper
+				-for(var i = 0; i < 3; i++)
+					.swiper-slide
+						.img.h-100
+							img.object-cover.fullsize(src=`./assets/img/banner-${i+ 1}.png`, alt="")

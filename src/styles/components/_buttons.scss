@@ -5,3 +5,62 @@
 	border: 0;
 	appearance: none;
 }
+
+.playgame__wrapper {
+	display: inline-block;
+	border-radius: 21px;
+	background: rgb(213,184,95);
+	background: linear-gradient(90deg, rgba(213,184,95,1) 0%, rgba(34,100,57,1) 100%);
+	padding: 3px;
+	position: relative;
+	&::after {
+		content: "";
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		border-radius: 21px;
+		position: absolute;
+		background:map-get($color, main-6);
+		opacity: 7%;
+		width: calc(100% + 20px);
+		height: calc(100% + 20px);
+		z-index: 10;
+		pointer-events: none;
+		z-index: 0;
+	}
+	.btn-playgame {
+		font-size: 1.3rem;
+		width: 110px;
+		height: 40px;
+		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+		background: rgb(213,184,95);
+		background: linear-gradient(270deg, rgba(213,184,95,1) 0%, rgba(255,255,255,1) 100%);
+		color: map-get($color, main-5);
+		border-radius: 21px;
+
+		&::after {
+			content: "";
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-radius: 21px;
+			position: absolute;
+			border: 1px solid rgba($color: #000000, $alpha: .3);
+			width: calc(100% + 6px);
+			height: calc(100% + 6px);
+			pointer-events: none;
+		}
+		&::before {
+			content: "";
+			top: 50%;
+			left: 50%;
+			pointer-events: none;
+			transform: translate(-50%,-50%);
+			border-radius: 21px;
+			position: absolute;
+			border: 1px solid rgba($color: #000000, $alpha: .15);
+			width: calc(100% + 10px);
+			height: calc(100% + 10px);
+		}
+	}
+}

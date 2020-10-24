@@ -60,10 +60,10 @@
 	.fp-dot {
 		width: 8px;
 		height: 8px;
-		border: 1px solid map-get($mau, trang);
+		border: 1px solid map-get($color, trang);
 		margin: 5px auto;
 		border-radius: 4px;
-		background-color: map-get($mau, trang);
+		background-color: map-get($color, trang);
 		cursor: pointer;
 		position: relative;
 		transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);

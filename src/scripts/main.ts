@@ -1,53 +1,144 @@
 import { getSVGs, Loading } from "./utilities/util";
-import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
+declare var Swiper:any;
+declare var $:any;
 
+const swiperMainBanner = () => {
+	var swiper = new Swiper('.mainBanner__wrapper .swiper-container', {
+		slidesPerView: 1,
+		speed: 2000,
+		loop:true,
+		// simulateTouch: false,
+		autoplay: {
+			delay: 2000,
+		},
+		
+	});
+}
+const swiperProgramRule = () => {
+	var swiper = new Swiper('.swiper-custom-common .swiper-container', {
+		slidesPerView: 1,
+		speed: 2000,
+		loop:true,
+		simulateTouch: false,
+		autoplay: {
+			delay: 2000,
+		},
+		breakpoints: {
+			1024.98: {
+				slidesPerView: 1,
+				centeredSlides: false,
+			},
+			700: {
+				slidesPerView: 3,
+				centeredSlides: true,
+			},
+			300: {
+				slidesPerView: 1.5,
+				centeredSlides: true,
+			}
+		}
+	  });
+}
+const swiperSummaryBottom = () => {
+	var swiper = new Swiper('.summary__wrapper--bottom .swiper-container', {
+		slidesPerView: 5,
+		speed: 2000,
+		loop:true,
+		breakpoints: {
+			1024.98: {
+				slidesPerView: 5,
+				simulateTouch: false,
+			},
+			400: {
+				slidesPerView: 3,
+				simulateTouch: true,
+
+			},
+			300: {
+				slidesPerView: 2,
+				simulateTouch: true,
+
+			}
+		}
+	  });
+}
+const checkLayoutBanner = () => {
+	const header = document.querySelector("header").offsetHeight;
+	document.querySelector(".mainBanner").setAttribute("style" , `padding-top:${header}px`)
+}
+
+// SHOW BACK TO TOP
+const showBackToTop = () => {
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 800) {
+			$('#go-top').addClass('show');
+		} else {
+			$('#go-top').removeClass('show');
+		}
+	});
+
+	$('#go-top').on('click', function(e:any) {
+		e.preventDefault();
+		$('html,body').animate({
+			scrollTop: 0,
+		});
+	});
+};
+
+const initMenuMobile = () => {
+	document.querySelector(".hambuger-menu").addEventListener("click", (e:any) => {
+		e.target.classList.toggle("active")
+		const menu:HTMLElement = document.querySelector(".header--menu .navBar")
+		menu.classList.toggle("active")
+	})
+}
+function scrollToSection() {
+	$('[data-scroll-to]').on('click', function(e:any) {
+		e.preventDefault();
+		const scrollToNumber = $(this).attr('data-scroll-to');
+		$('html,body').animate({
+				scrollTop: $(`[data-scroll-id="${scrollToNumber}"]`).offset().top -
+					$('header').height(),
+			},
+			1200
+		);
+	
+	});
+};
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
-	// create instance fullpage
-	const fpOptions: FullpageOptions = {
-		prevEl: ".fp-prev",
-		nextEl: ".fp-next",
-		speed: 800,
-		slideClass: ".fp-slide",
-		dots: true,
-		on: {
-			// event is fired before slide start transition
-			beforeSlideChange: function (
-				currentSlide,
-				nextSlide,
-				currentIndex,
-				nextIndex,
-			) {
-				console.log(currentSlide, nextSlide, currentIndex, nextIndex);
-			},
-			// event is fired after slide end transition
-			afterSlideChange: function (currentSlide, currentIndex) {
-				console.log(currentSlide, currentIndex);
-			},
-		},
-	};
-	const fp = new Fullpage(".fp-container", fpOptions);
-	// method slide to a slide with index
-	fp.slideTo(0);
-	// method get current index of fullpage
-	fp.getIndex();
-	// method allow or not allow scroll to slide fullpage: true = allow, false = not allow
-	fp.canScroll(true);
+	swiperMainBanner();
+	swiperProgramRule();
+	swiperSummaryBottom();
+	checkLayoutBanner();
+	showBackToTop();
+	initMenuMobile();
+	scrollToSection();
+	// const num = document.querySelectorAll("h1").length
+	
+	// document.querySelector("button").addEventListener("click" , (item) => {
+	// 	let check: number = 0;
+	// 	if(document.querySelector("input[type=radio]:checked")) {
+	// 		document.querySelectorAll("input[type=radio]:checked").forEach((item) => {
+	// 			const istrue = item.getAttribute("data-istrue") 
+	// 			if(istrue == "true") {
+	// 				check++;
+	// 			} else {
+	// 				item.parentElement.classList.add('test')
+	// 			}
+	// 		})
+	// 	}
+	// 	if(check == num) {
+	// 		console.log(check);
+	// 		console.log("done");
+	// 	} else {
+	// 		console.log(check);
+	// 		console.log("fail");
+	// 	}
+	// })
 });
-
-const fetchData = () => {
-	const formData = new FormData();
-	formData.append("FirstName", "Sơn");
-	formData.append("LastName", "Vũ");
-	Axios.post("/user", formData).then(function (response) {
-		console.log(response);
-	});
-
-	Axios.get("./api/test.json")
-		.then((response) => {
-			return response;
-		})
-		.finally(() => {});
-};
+document.addEventListener("resize", () => {
+	checkLayoutBanner();
+});

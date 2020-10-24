@@ -27,6 +27,23 @@
 	}
 }
 
+.container-custom {
+	position: relative;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+	&.size-1365px {
+		@media (min-width: 1440px) {
+			max-width: 1385px;
+		}
+	}
+	&.size-1640px {
+		@media (min-width: 1440px) {
+			max-width: 1640px;
+		}
+	}
+}
+
 .col {
 	-ms-flex-preferred-size: 0;
 	flex-basis: 0;

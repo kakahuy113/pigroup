@@ -1,0 +1,171 @@
+.pop-up(hidden)
+	#program-rule
+		.container
+			.container-custom.size-1365px
+				.popup__wrapper
+					.main-title-img.text-center
+						img(src="./assets/img/programe-rule.png", alt="")
+					.sub-title.text-center
+						p (V/v Chương trình rút thăm may mắn “An Khang Sum Vầy”)
+					.rule-content
+						p
+							!= "<span>1. Tên chương trình:</span>An Khang Sum Vầy"
+						p
+							!= "<span>2. Hình thức khuyến mại:</span>Rút thăm may mắn Theo “Phiếu rút thăm trúng thưởng” do Pi Home phát hành cho Khách hàng."
+						p
+							!= "<span>3. Khách hàng tham dự (đối tượng được rút thăm):</span></br>Tất cả khách hàng đã thực hiện chuyển cọc thành công đối với các sản phẩm Park 1 dự án Picity High Park và được ghi nhận trên hệ thống của Pi Home từ 01/10/2020 đến trước thời điểm thực hiện chương trình Rút thăm may mắn sẽ nhận được phiếu rút thăm tham gia chương trình An Khang Sum Vầy."
+						p
+							!= "<span>4. Cơ cấu giải thưởng:</span>An Khang Sum Vầy"
+						.prize-table
+							.title
+								.rank-title
+									p HẠNG MỤC
+								.num-title
+									p SỐ LƯỢNG
+								.price-title
+									p TRỊ GIÁ
+							-for(var i = 0; i < 3; i ++)
+								.list-rank
+									.rank
+										p Giải Nhất
+									.num
+										p 01
+									.price
+										p Giải thưởng trị giá 300.000.000 VNĐ
+	#quiz-answer
+		.container
+			.container-custom.size-1365px
+				.popup__wrapper
+					.main-title-img.text-center
+						img(src="./assets/img/quiz-title.png", alt="")
+					.quiz-content
+						.item
+							.question
+								.question-item
+									p Câu Hỏi 1:
+								.question-item-desc
+									p
+										!= "Với quy mô 8.6 ha, dự án Picity High Park có mật độ xây dựng là bao nhiêu?"
+							.answer
+								.answer--item
+									input(istrue= "true" type="radio" name="cau1" id="cau1-1")
+									label(for="cau1-1") 70%
+								.answer--item
+									input(type="radio" name="cau1" id="cau1-2")
+									label(for="cau1-2") 55%
+								.answer--item
+									input(type="radio" name="cau1" id="cau1-3")
+									label(for="cau1-3") 23%
+						.item
+							.question
+								.question-item
+									p Câu Hỏi 2:
+								.question-item-desc
+									p
+										!= "Giá dự kiến trong đợt mở bán kỳ 04 là:"
+							.answer
+								.answer--item
+									input(istrue= "true" type="radio" name="cau1" id="cau2-1")
+									label(for="cau2-1") Từ 45 triệu/m2
+								.answer--item
+									input(type="radio" name="cau1" id="cau2-2")
+									label(for="cau2-2") Từ 45 triệu/m2
+								.answer--item
+									input(type="radio" name="cau1" id="cau2-3")
+									label(for="cau2-3") Từ 45 triệu/m2
+						.item
+							.question
+								.question-item
+									p Câu Hỏi 3:
+								.question-item-desc
+									p
+										!= "Mật độ cây xanh và tiện ích tại dự án Picity High Park chiếm bao nhiêu %?"
+							.answer
+								.answer--item.active
+									input(istrue= "true" type="radio" name="cau1" id="cau3-1")
+									label(for="cau3-1") 77%
+								.answer--item.disable
+									input(type="radio" name="cau1" id="cau3-2")
+									label(for="cau3-2") 67%
+								.answer--item
+									input(type="radio" name="cau1" id="cau3-3")
+									label(for="cau3-3") 37%
+						.item
+							.question
+								.question-item
+									p Câu Hỏi 4:
+								.question-item-desc
+									p
+										!= "Các trường học nào được đầu tư xây dựng tại dự án"
+							.answer
+								.answer--item
+									input(istrue= "true" type="radio" name="cau1" id="cau4-1")
+									label(for="cau4-1") Mầm non
+								.answer--item
+									input(type="radio" name="cau1" id="cau4-2")
+									label(for="cau4-2") Cấp 1
+								.answer--item
+									input(type="radio" name="cau1" id="cau4-3")
+									label(for="cau4-3") Cả a & b đều đúng
+						.item
+							.question
+								.question-item
+									p Câu Hỏi 5:
+								.question-item-desc
+									p
+										!= "Các điểm nổi bật tại Phân khu Park 1 so với những phân khu đã bán là gì?"
+							.answer
+								.answer--item
+									input(istrue= "true" type="radio" name="cau1" id="cau5-1")
+									label(for="cau5-1") Được trang bị thiết bị smart home, sảnh đón trang trọng phong cách Indochine, bàn giao nội thất toilet,…
+								.answer--item
+									input(type="radio" name="cau1" id="cau5-2")
+									label(for="cau5-2") Hệ thống camera cảnh báo an ninh trong căn hộ 24/24
+								.answer--item
+									input(type="radio" name="cau1" id="cau5-3")
+									label(for="cau5-3") Cả a & b đều đúng
+						.item
+							.answer-btn
+								a(data-fancybox data-src="#info-customer" href="javascript:;").playgame__wrapper
+									.btn.btn-playgame Trả Lời
+	#info-customer
+		.container
+			.container-custom.size-1365px
+				.popup__wrapper
+					.main-title-img.text-center
+						img(src="./assets/img/info-customer.png", alt="")
+					.table-info-custom
+						form(action="")
+							.wrapper
+								.item
+									.field
+										label(for="name") Họ Và Tên:*
+									.field-input
+										input(type="text" id="name")
+								.item
+									.field
+										label(for="cmnd") CMND/Passport:*
+									.field-input
+										input(type="text" id="cmnd")
+								.item
+									.field
+										label(for="san") Sàn:
+									.field-input
+										select(name="" id="san")
+											option(value="") Chọn sàn
+											option(value="") alo
+											option(value="") alo
+							.complete
+								a(data-fancybox data-src="#congratulation" href="javascript:;").playgame__wrapper
+									.btn.btn-playgame Hoàn Tất
+	#congratulation
+		.container
+			.container-custom.size-1365px
+				.popup__wrapper.text-center
+					.main-title-img
+						img(src="./assets/img/congratulations.png", alt="")
+					.sub-title
+						p Chúc mừng bạn đã tham gia chương trình "An Khang Sum Vầy" của dự án PiCity High Park. Bạn có cơ hội tham gia rút thăm may mắn tại sự kiện mở bán. Tổng giải thưởng lên đến
+					img(src="./assets/img/600 TRIEU.png", alt="")
+					p ……………………………………………….
+					img(src="./assets/img/gift.png", alt="")

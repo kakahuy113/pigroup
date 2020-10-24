@@ -1,0 +1,165 @@
+header {
+	height: 74px;
+	background: #17412f;
+	box-shadow: 0 3px 6px map-get($color, main-6);
+	z-index: 500;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.header__wrapper {
+	display: flex;
+	position: relative;
+	.header--logo {
+		position: relative;
+		-ms-flex: 0 0 30%;
+		flex: 0 0 30%;
+		max-width: 30%;
+		z-index: 10;
+		.img {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 140px;
+			height: 140px;
+			@media (max-width: 1024.98px) {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		@media (max-width: 1024px) {
+			-ms-flex: 0 0 15%;
+			flex: 0 0 15%;
+			max-width: 15%;
+			.img {
+				right: unset;
+				left: 0;
+			}
+		}
+	}
+	.header--menu {
+		-ms-flex: 0 0 70%;
+		flex: 0 0 70%;
+		max-width: 70%;
+		height: 100%;
+		@media (max-width: 1024px) {
+			-ms-flex: 0 0 85%;
+			flex: 0 0 85%;
+			max-width: 85%;
+			width: fit-content;
+		}
+		.navBar {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			margin-right: -20px;
+			margin-left: -20px;
+			.navItem {
+				padding: 0 20px;
+				a {
+					display: block;
+					color: map-get($color, main-4);
+					font-family: Lato-Black;
+					text-transform: uppercase;
+					svg {
+						vertical-align: baseline;
+					}
+				}
+				.playgame__wrapper {
+				
+				}
+			}
+			@media (max-width: 1024.98px) {
+				position: absolute;
+				top: 100%;
+				padding: 10px;
+				height: auto;
+				left: 50%;
+				background: map-get($color, main-1);
+				transform: translateX(-50%);
+				flex-direction: column;
+				opacity: 0;
+				pointer-events: none;
+				transition: 1s all ease-in-out;
+				.navItem {
+					&:not(:last-child) {
+						padding-bottom: 20px;
+						width: 100%;
+					}
+					&:last-child {
+						display: none;
+					}
+				}
+				&.active {
+					opacity: 1;
+					pointer-events: all;
+					transition: 1s all ease-in-out;
+				}
+			}
+		}
+	}
+}
+.playgame-mobile {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	justify-content: flex-end;
+}
+.hambuger-menu {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 40px;
+	height: 40px;
+	z-index: 10;
+    background: map-get($color, main-1);
+	border-radius: 5px;
+	@media (max-width: 1024px) {
+		display: block;
+	}
+	span,
+    &:before,
+    &:after {
+        position: absolute;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background-color: #fff;
+        content: "";
+        transition: .3s all linear;
+	}
+	span {
+		pointer-events: none;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+    &:before {
+        top: 10px;
+    }
+    &:after {
+        bottom: 10px;
+    }
+    &.active {
+		overflow: hidden;
+		span,
+        &:before,
+        &:after {
+            top: 50%;
+            left: 50%;
+		}
+		span {
+			width: 80%;
+            transform: translate(-50%, -50%) rotate(90deg);
+			
+		}
+        &:before {
+            transform: translate(-88%, -50%) rotate(45deg);
+        }
+        &:after {
+            transform: translate(-12%, -50%) rotate(-45deg);
+        }
+    }
+}

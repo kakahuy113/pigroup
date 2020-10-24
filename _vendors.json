@@ -2,7 +2,12 @@
 	"fonts": ["src/fonts/**"],
 	"js": [
 		"node_modules/jquery/dist/jquery.min.js",
-		"node_modules/lazysizes/lazysizes.min.js"
+		"node_modules/lazysizes/lazysizes.min.s",
+		"node_modules/swiper/js/swiper.js",
+		"node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js"
 	],
-	"css": ["node_modules/swiper/css/swiper.min.css"]
+	"css": [
+		"node_modules/swiper/css/swiper.min.css",
+		"node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css"
+	]
 }

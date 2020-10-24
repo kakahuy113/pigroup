@@ -19,7 +19,7 @@
 	"get-color": {
 		"scope": "css,less,scss",
 		"prefix": "clg",
-		"body": ["map-get(\\$mau, $0)"]
+		"body": ["map-get(\\$color, $0)"]
 	},
 	"get-font": {
 		"scope": "css,less,scss",
@@ -74,7 +74,7 @@
 	"media-downlg": {
 		"scope": "css,less,scss",
 		"prefix": "mddlg",
-		"body": ["@media (max-width: 1024px) {", "\t$0", "}"]
+		"body": ["@media (max-width: 1024.98px) {", "\t$0", "}"]
 	},
 	"media-downxl": {
 		"scope": "css,less,scss",
