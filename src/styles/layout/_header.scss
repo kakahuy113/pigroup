@@ -66,9 +66,6 @@ header {
 						vertical-align: baseline;
 					}
 				}
-				.playgame__wrapper {
-				
-				}
 			}
 			@media (max-width: 1024.98px) {
 				position: absolute;
@@ -105,6 +102,12 @@ header {
 	height: 100%;
 	align-items: center;
 	justify-content: flex-end;
+	@media (max-width: 1024.98px) {
+		.btn-playgame {
+			width: 80px !important;
+			height: 25px !important;
+		}
+	}
 }
 .hambuger-menu {
 	display: none;

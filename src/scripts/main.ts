@@ -45,20 +45,26 @@ const swiperSummaryBottom = () => {
 		slidesPerView: 5,
 		speed: 2000,
 		loop:true,
+		simulateTouch: false,
+		autoplay: {
+			delay: 2000,
+		},
 		breakpoints: {
 			1024.98: {
 				slidesPerView: 5,
 				simulateTouch: false,
+				autoplay: false,
+				spaceBetween: 0
 			},
 			400: {
+				spaceBetween: 10,
 				slidesPerView: 3,
 				simulateTouch: true,
-
 			},
 			300: {
+				spaceBetween: 10,
 				slidesPerView: 2,
 				simulateTouch: true,
-
 			}
 		}
 	  });
@@ -136,11 +142,12 @@ const answerQuestions = () => {
 				closeExisting: true,
 			})
 		} else {
-			document.querySelectorAll(".answer--item").forEach(parent => {
+			document.querySelectorAll(".answer--item").forEach((parent:any) => {
 				const temp = parent.querySelector("input");
 				if ( parent.querySelector("input").checked) {
 					if(temp.getAttribute("istrue") == "true") {
 						parent.classList.add("active")
+						parent.parentNode.style.cssText  = "pointer-events:none"
 					} else {
 						parent.classList.add("disable")
 					}
@@ -149,9 +156,27 @@ const answerQuestions = () => {
 			document.querySelectorAll(".answer--item").forEach(parent => {
 				const temp = parent.querySelector("input");
 				if( temp.getAttribute("istrue") == "true") {
-					temp.click();
+					parent.classList.add("active-hint")
 				}
+				parent.addEventListener("click" , (e:any) => {
+					if ( parent.querySelector("input").checked) {
+						parent.classList.add("active")
+					}
+					document.querySelectorAll(".answer--item").forEach(parent => {
+						const temp = parent.querySelector("input");
+						if ( parent.querySelector("input").checked) {
+							parent.classList.add("active")
+							
+						}
+						if(temp.getAttribute("istrue") == "false") {
+							parent.classList.remove("active")
+		
+						} 
+					})
+				})
 			})
+		
+		
 			
 			$.fancybox.open({
 				src: "#noti",
@@ -175,7 +200,7 @@ const infoCustomerRequest = () => {
 		const nameSelected = select.getAttribute("name");
 		const valueSelected = select.value;
 		formData.append(nameSelected , valueSelected);
-		// if($(".table-info-custom form").valid() === true) {
+		if($(".table-info-custom form").valid() === true) {
 			// Axios.interceptors.request.use(config => {
 			// 	$(e.target).attr("disabled" , "disabled");
 			// 	return config;
@@ -192,7 +217,7 @@ const infoCustomerRequest = () => {
 					$(e.target).removeAttr("disabled");
 				}
 			});
-		// }
+		}
 	})
 }
 
