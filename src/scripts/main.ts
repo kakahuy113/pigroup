@@ -113,9 +113,89 @@ const fireworks = () => {
 
 const answerQuestions = () => {
 	 document.querySelector(".answer-btn").addEventListener("click" , (e:any) => {
-		document.querySelector(`#quiz-answer input[type=radio]:checked`)
+		 e.preventDefault();
+		const checkedInput = document.querySelectorAll(`#quiz-answer input[type=radio]:checked`)
+		if(checkedInput.length < 5) {
+			console.log(checkedInput.length);
+			$.fancybox.open({
+				src: "#noti-2",
+				type: "inline"
+			})
+			return;
+		}
+		let istrue = 0;
+		checkedInput.forEach((item) => {
+			if(item.getAttribute("istrue") == "true") {
+				istrue++;
+			} 
+		})
+		if(istrue == 5 ) {
+			$.fancybox.open({
+				src: "#info-customer",
+				type: "inline",
+				closeExisting: true,
+			})
+		} else {
+			document.querySelectorAll(".answer--item").forEach(parent => {
+				const temp = parent.querySelector("input");
+				if ( parent.querySelector("input").checked) {
+					if(temp.getAttribute("istrue") == "true") {
+						parent.classList.add("active")
+					} else {
+						parent.classList.add("disable")
+					}
+				}
+			})
+			document.querySelectorAll(".answer--item").forEach(parent => {
+				const temp = parent.querySelector("input");
+				if( temp.getAttribute("istrue") == "true") {
+					temp.click();
+				}
+			})
+			
+			$.fancybox.open({
+				src: "#noti",
+				type: "inline",
+			})
+		}
 	 })
 }
+
+const infoCustomerRequest = () => {
+	document.querySelector(".complete button").addEventListener("click" , (e:any) => {	
+		e.preventDefault();
+		const url = $(".complete button").attr("data-url")
+		const formData = new FormData();
+		document.querySelectorAll(".field-input input").forEach((item:any) => {
+			const name = item.getAttribute("name")
+			const value = item.value
+			formData.append(name , value)
+		});
+		const select: any = document.querySelector(".field-select select")
+		const nameSelected = select.getAttribute("name");
+		const valueSelected = select.value;
+		formData.append(nameSelected , valueSelected);
+		// if($(".table-info-custom form").valid() === true) {
+			// Axios.interceptors.request.use(config => {
+			// 	$(e.target).attr("disabled" , "disabled");
+			// 	return config;
+			// })
+			Axios.post(`${url}`, formData).then((res: any) => {
+				if (res.data.Code == 200) {
+					$.fancybox.open({
+						src: "#congratulation",
+						type: "inline"
+					})
+				}
+				if (res.data.Code == 400) {
+					alert(`${res.data.Message}`);
+					$(e.target).removeAttr("disabled");
+				}
+			});
+		// }
+	})
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -127,7 +207,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initMenuMobile();
 	scrollToSection();
 	fireworks();
-	
+	answerQuestions();
+	infoCustomerRequest();
 	// const num = document.querySelectorAll("h1").length
 	
 	// document.querySelector("button").addEventListener("click" , (item) => {
