@@ -13,20 +13,22 @@
 	background: linear-gradient(90deg, rgba(213,184,95,1) 0%, rgba(34,100,57,1) 100%);
 	padding: 3px;
 	position: relative;
-	&::after {
-		content: "";
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		border-radius: 21px;
-		position: absolute;
-		background:map-get($color, main-6);
-		opacity: 7%;
-		width: calc(100% + 20px);
-		height: calc(100% + 20px);
-		z-index: 10;
-		pointer-events: none;
-		z-index: 0;
+	@media (min-width: 1025px) {
+		&::after {
+			content: "";
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-radius: 21px;
+			position: absolute;
+			background:map-get($color, main-6);
+			opacity: 7%;
+			width: calc(100% + 20px);
+			height: calc(100% + 20px);
+			z-index: 10;
+			pointer-events: none;
+			z-index: 0;
+		}
 	}
 	.btn-playgame {
 		font-size: 1.3rem;

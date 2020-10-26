@@ -216,10 +216,12 @@ const infoCustomerRequest = () => {
 				// })
 				Axios.post(`${url}`, formData).then((res: any) => {
 					if (res.data.Code == 200) {
+						document.querySelector(".toGift .code").textContent = res.data.Result
 						$.fancybox.open({
 							src: "#congratulation",
 							type: "inline"
 						})
+						
 					}
 					if (res.data.Code == 400) {
 						alert(`${res.data.Message}`);
@@ -266,11 +268,7 @@ const renderCustomerGame = () => {
 			e.preventDefault();
 			const url = e.target.getAttribute("data-url")
 			Axios.get(`${url}`).then((res:any) => {
-				if(res.data.Code == 200) {
-					document.querySelector(".customer-list__wrapper--inner .wrapper").innerHTML = `${res.data.Result}`
-				} else {
-					alert(res.data.Message)
-				}
+				document.querySelector(".customer-list__wrapper--inner .wrapper").innerHTML = `${res.data.Result}`
 			})
 		})
 	})
@@ -290,6 +288,7 @@ const checkPagination =  () => {
 		
 	})
 }
+
 window.onload = () => {
 	if(document.querySelector(".fake-button-recaptcha")) {
 		const button: HTMLElement = document.querySelector(".fake-button-recaptcha");
