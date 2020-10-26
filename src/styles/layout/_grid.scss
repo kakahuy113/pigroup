@@ -25,6 +25,9 @@
 	@media (min-width: 1360px) {
 		max-width: 1290px;
 	}
+	@media (min-width: 1440px) {
+		max-width: 1640px;
+	}
 }
 
 .container-custom {
@@ -40,6 +43,11 @@
 	&.size-1640px {
 		@media (min-width: 1440px) {
 			max-width: 1640px;
+		}
+	}
+	&.size-1000px {
+		@media (min-width: 1440px) {
+			max-width: 700px;
 		}
 	}
 }

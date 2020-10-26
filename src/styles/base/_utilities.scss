@@ -106,7 +106,7 @@
     cursor: pointer;
 	position: fixed;
 	right: 25px;
-	bottom: 240px;
+	bottom: 100px;
 	opacity: 0;
 	visibility: hidden;
 	transition: .3s all ease-in-out;
@@ -148,8 +148,10 @@
 		font-size: 2.6rem;
 		font-family: Lato-Black;
 		text-align: center;
+		animation: pulse 2s ease infinite;
 		&::after,
 		&::before {
+			animation: AnimationButtonBorder 2s ease infinite;
 			border-radius: 50%;
 			border: 1px solid map-get($color, main-4);
 		}
@@ -163,4 +165,28 @@
 		}
 		
 	}
+}
+
+.fake-button-recaptcha {
+	display: none;
+}
+
+.lcl {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    &-1 {
+        -webkit-line-clamp: 1;
+    }
+    &-2 {
+        -webkit-line-clamp: 2;
+    }
+    &-3 {
+        -webkit-line-clamp: 3;
+    }
+    &-4 {
+        -webkit-line-clamp: 4;
+    }
 }

@@ -1,0 +1,139 @@
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 5px rgba(map-get($color, main-4), $alpha: 1);
+	}
+
+	70% {
+		box-shadow: 0 0 0 15px rgba($color: map-get($color, main-4), $alpha: .5);
+		opacity: 50%;
+	}
+
+	100% {
+		box-shadow: 0 0 0 20px rgba($color: map-get($color, main-4), $alpha: .1);
+	}
+}
+
+@media (max-width: 1024.98px) {
+	@keyframes pulse {
+		0% {
+			box-shadow: 0 0 0 0
+				rgba(map-get($color, main-2), $alpha: 1);
+		}
+
+		70% {
+			box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+		}
+
+		100% {
+			box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+		}
+	}
+}
+
+@keyframes AnimationBackGroundGradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 100%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+// BORDER BUTTON
+
+@keyframes AnimationButtonBorder {
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	50% {
+		transform: translate(-50%, -50%) scale(1.1);
+	}
+
+	100% {
+		transform: translate(-50%, -50%) scale(1.2);
+	}
+}
+
+
+@keyframes Stroke1 {
+	0% {
+		stroke: rgba(#dcc375, 0.05);
+		stroke-width: 0px;
+	}
+
+	100% {
+		stroke: rgba(#dcc375, 0);
+		stroke-width: 800px;
+	}
+}
+
+@keyframes Stroke2 {
+	0% {
+		stroke: rgba(#dcc375, 0.15);
+		stroke-width: 0px;
+	}
+
+	100% {
+		stroke: rgba(#dcc375, 0);
+		stroke-width: 800px;
+	}
+}
+
+@keyframes fadeInOut {
+	0% {
+		opacity: 0.5;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0.5;
+	}
+}
+
+@keyframes progress-bar-stripes {
+	from {
+		background-position: 1rem 0;
+	}
+
+	to {
+		background-position: 0 0;
+	}
+}
+
+@keyframes chophopmau {
+	0% {
+		background: rgba(34, 100, 57, 0.3);
+	}
+
+	50% {
+		background: rgba(220, 194, 117, 0.3);	
+	}
+
+	100% {
+		background: rgba(34, 100, 57, 0.3);
+	}
+}
+
+@keyframes test {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+@keyframes shine {
+	0% {background-position: -100%;}
+	100% {background-position: 100%;}
+}

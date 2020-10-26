@@ -1,0 +1,12 @@
+//- extends _templates/_layout/_layout.pug
+link(rel="stylesheet", href="./css/core.min.css")
+link(rel="stylesheet", href="./css/main.min.css")
+block var
+	- let title = 'Page | phieuruthtam';
+	- let bodyClass = 'phieuruthtam-page';
+//- block loading
+//- 	include _templates/_layout/_loading
+block banner,breadcrumb
+block main
+	include _templates/phieuruttham/p-1
+block scripts

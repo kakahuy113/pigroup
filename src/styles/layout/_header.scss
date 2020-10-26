@@ -49,6 +49,14 @@ header {
 			max-width: 85%;
 			width: fit-content;
 		}
+		.btn-playgame {
+		
+			animation: pulse 2s ease infinite;
+			&::after,
+			&::before {
+				animation: AnimationButtonBorder 2s ease infinite;
+			}
+		}
 		.navBar {
 			display: flex;
 			align-items: center;
@@ -106,6 +114,11 @@ header {
 		.btn-playgame {
 			width: 80px !important;
 			height: 25px !important;
+			animation: pulse 2s ease infinite;
+			&::after,
+			&::before {
+				animation: AnimationButtonBorder 2s ease infinite;
+			}
 		}
 	}
 }

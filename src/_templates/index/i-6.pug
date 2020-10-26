@@ -9,13 +9,13 @@
 						p (V/v Chương trình rút thăm may mắn “An Khang Sum Vầy”)
 					.rule-content
 						p
-							!= "<span>1. Tên chương trình:</span>An Khang Sum Vầy"
+							!= "<span>1. Tên chương trình: </span>An Khang Sum Vầy"
 						p
-							!= "<span>2. Hình thức khuyến mại:</span>Rút thăm may mắn Theo “Phiếu rút thăm trúng thưởng” do Pi Home phát hành cho Khách hàng."
+							!= "<span>2. Hình thức khuyến mại: </span>Rút thăm may mắn Theo “Phiếu rút thăm trúng thưởng” do Pi Home phát hành cho Khách hàng."
 						p
-							!= "<span>3. Khách hàng tham dự (đối tượng được rút thăm):</span></br>Tất cả khách hàng đã thực hiện chuyển cọc thành công đối với các sản phẩm Park 1 dự án Picity High Park và được ghi nhận trên hệ thống của Pi Home từ 01/10/2020 đến trước thời điểm thực hiện chương trình Rút thăm may mắn sẽ nhận được phiếu rút thăm tham gia chương trình An Khang Sum Vầy."
+							!= "<span>3. Khách hàng tham dự (đối tượng được rút thăm): </span></br>Tất cả khách hàng đã thực hiện chuyển cọc thành công đối với các sản phẩm Park 1 dự án Picity High Park và được ghi nhận trên hệ thống của Pi Home từ 01/10/2020 đến trước thời điểm thực hiện chương trình Rút thăm may mắn sẽ nhận được phiếu rút thăm tham gia chương trình An Khang Sum Vầy."
 						p
-							!= "<span>4. Cơ cấu giải thưởng:</span>An Khang Sum Vầy"
+							!= "<span>4. Cơ cấu giải thưởng: </span>An Khang Sum Vầy"
 						.prize-table
 							.title
 								.rank-title
@@ -24,14 +24,27 @@
 									p SỐ LƯỢNG
 								.price-title
 									p TRỊ GIÁ
-							-for(var i = 0; i < 3; i ++)
-								.list-rank
-									.rank
-										p Giải Nhất
-									.num
-										p 01
-									.price
-										p Giải thưởng trị giá 300.000.000 VNĐ
+							.list-rank
+								.rank
+									p Giải nhất
+								.num
+									p 01
+								.price
+									p Giải thưởng trị giá 300.000.000 VNĐ
+							.list-rank
+								.rank 
+									p Giải nhì
+								.num
+									p 01
+								.price
+									p Giải thưởng trị giá 200.000.000 VNĐ
+							.list-rank
+								.rank
+									p Giải ba
+								.num
+									p 01
+								.price
+									p Giải thưởng trị giá 100.000.000 VNĐ
 	#quiz-answer
 		.container
 			.container-custom.size-1365px
@@ -49,7 +62,7 @@
 							.answer
 								.answer--item
 									.wrapper
-										input(istrue= "true" type="radio" name="cau1" id="cau1-1")
+										input(istrue= "false" type="radio" name="cau1" id="cau1-1")
 										label(for="cau1-1") 70%
 								.answer--item
 									.wrapper
@@ -57,7 +70,7 @@
 										label(for="cau1-2") 55%
 								.answer--item
 									.wrapper
-										input(istrue="false" type="radio" name="cau1" id="cau1-3")
+										input(istrue="true" type="radio" name="cau1" id="cau1-3")
 										label(for="cau1-3") 23%
 						.item
 							.question
@@ -109,7 +122,7 @@
 							.answer
 								.answer--item
 									.wrapper
-										input(istrue= "true" type="radio" name="cau4" id="cau4-1")
+										input(istrue= "false" type="radio" name="cau4" id="cau4-1")
 										label(for="cau4-1") Mầm non
 								.answer--item
 									.wrapper
@@ -117,7 +130,7 @@
 										label(for="cau4-2") Cấp 1
 								.answer--item
 									.wrapper
-										input(istrue="false" type="radio" name="cau4" id="cau4-3")
+										input(istrue="true" type="radio" name="cau4" id="cau4-3")
 										label(for="cau4-3") Cả a & b đều đúng
 						.item
 							.question
@@ -129,7 +142,7 @@
 							.answer
 								.answer--item
 									.wrapper
-										input(istrue= "true" type="radio" name="cau5" id="cau5-1")
+										input(istrue= "false" type="radio" name="cau5" id="cau5-1")
 										label(for="cau5-1") Được trang bị thiết bị smart home, sảnh đón trang trọng phong cách Indochine, bàn giao nội thất toilet,…
 								.answer--item
 									.wrapper
@@ -137,7 +150,7 @@
 										label(for="cau5-2") Hệ thống camera cảnh báo an ninh trong căn hộ 24/24
 								.answer--item
 									.wrapper
-										input(istrue="false" type="radio" name="cau5" id="cau5-3")
+										input(istrue="true" type="radio" name="cau5" id="cau5-3")
 										label(for="cau5-3") Cả a & b đều đúng
 						.item
 							.answer-btn
@@ -152,6 +165,7 @@
 					.table-info-custom
 						form(action="")
 							.wrapper
+								input.g-recaptcha(type="hidden" name="recaptcha" data-sitekey="6Le-tdEZAAAAAHiNLcnunnaYNGYWPK7gwZjC1g9y")
 								.item
 									.field
 										label(for="name") Họ Và Tên:*
