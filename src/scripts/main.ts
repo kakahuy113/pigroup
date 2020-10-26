@@ -8,11 +8,12 @@ const swiperMainBanner = () => {
 	var swiper = new Swiper('.mainBanner__wrapper .swiper-container', {
 		slidesPerView: 1,
 		speed: 2000,
-		loop:true,
+		autoHeight: true,
+		// loop:true,
 		// simulateTouch: false,
-		autoplay: {
-			delay: 2000,
-		},
+		// autoplay: {
+		// 	delay: 2000,
+		// },
 		
 	});
 }
@@ -120,15 +121,20 @@ const fireworks = () => {
 
 const answerQuestions = () => {
 	if(document.querySelector("#quiz-answer")) {
+		document.querySelectorAll(".answer").forEach(item => {
+			item.querySelectorAll(".answer--item").forEach(child => {
+				child.querySelector(".wrapper").addEventListener("click" , () => {
+					item.querySelectorAll(".answer--item").forEach(child => {
+						child.classList.remove("checked");
+					})
+					child.classList.add("checked");
+				})
+			})
+		})
 		document.querySelector(".answer-btn").addEventListener("click" , (e:any) => {
 			e.preventDefault();
 		   const checkedInput = document.querySelectorAll(`#quiz-answer input[type=radio]:checked`)
 		   if(checkedInput.length < 5) {
-			   console.log(checkedInput.length);
-			   $.fancybox.open({
-				   src: "#noti-2",
-				   type: "inline"
-			   })
 			   return;
 		   }
 		   let istrue = 0;
@@ -160,22 +166,31 @@ const answerQuestions = () => {
 				   if( temp.getAttribute("istrue") == "true") {
 					   parent.classList.add("active-hint")
 				   }
-				   parent.addEventListener("click" , (e:any) => {
-					   if ( parent.querySelector("input").checked) {
-						   parent.classList.add("active")
-					   }
-					   document.querySelectorAll(".answer--item").forEach(parent => {
-						   const temp = parent.querySelector("input");
-						   if ( parent.querySelector("input").checked) {
-							   parent.classList.add("active")
-							   
-						   }
-						   if(temp.getAttribute("istrue") == "false") {
-							   parent.classList.remove("active")
+				//    parent.addEventListener("click" , (e:any) => {
+				// 	   if ( parent.querySelector("input").checked) {
+				// 		   parent.classList.add("active")
+				// 	   }
+				// 	   document.querySelectorAll(".answer--item").forEach(parent => {
+				// 		   const temp = parent.querySelector("input");
+				// 		   if ( parent.querySelector("input").checked) {
+				// 			   parent.classList.add("active")
+				// 		   }
+				// 		   if(temp.getAttribute("istrue") == "false") {
+				// 			   parent.classList.remove("active")
 		   
-						   } 
-					   })
-				   })
+				// 		   } 
+				// 	   })
+				//    })
+				document.querySelectorAll(".answer").forEach(item => {
+					item.querySelectorAll(".answer--item").forEach(child => {
+						child.querySelector(".wrapper").addEventListener("click" , () => {
+							item.querySelectorAll(".answer--item").forEach(child => {
+								child.classList.remove("active");
+							})
+							child.classList.add("active");
+						})
+					})
+				})
 			   })
 		   
 		   
@@ -310,7 +325,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	scrollToSection();
 	fireworks();
 	answerQuestions();
-	infoCustomerRequest();
+	// infoCustomerRequest();
 	renderCustomerGame();
 	checkPagination();
 	// const num = document.querySelectorAll("h1").length

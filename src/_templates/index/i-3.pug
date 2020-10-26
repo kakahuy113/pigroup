@@ -37,7 +37,7 @@ section.program-rule(data-scroll-id="2")
 				.program-rule--swiper.swiper-custom-common
 					.swiper-container
 						.swiper-wrapper
-							-for(var i=0; i < 2; i++)
+							-for(var i=0; i < 10; i++)
 								.swiper-slide
 									.img
-										img.object-cover.fullsize(src=`./assets/img/item-1.png`, alt="images")
+										img.object-cover.fullsize(src=`./assets/img/item-${i + 1}.jpg`, alt="images")
