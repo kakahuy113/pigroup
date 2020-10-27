@@ -194,3 +194,12 @@
 .grecaptcha-badge {
 	display: none;
 }
+
+.input-validation-error {
+	border: 1px solid red !important;
+}
+
+.field-validation-error {
+	color: red !important;
+}
+

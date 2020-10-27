@@ -278,7 +278,7 @@ const infoCustomerRequest = () => {
 				const valueToken = responserRecaptcha.value;
 				const nameRecaptcha = responserRecaptcha.getAttribute("name");
 				formData.append(nameRecaptcha, valueToken);
-				// if ($(".table-info-custom form").valid() === true) {
+				if ($(".table-info-custom form").valid() === true) {
 					// Axios.interceptors.request.use(config => {
 					// 	$(e.target).attr("disabled" , "disabled");
 					// 	return config;
@@ -291,6 +291,7 @@ const infoCustomerRequest = () => {
 							$.fancybox.open({
 								src: "#congratulation",
 								type: "inline",
+								closeExisting: true
 							});
 						}
 						if (res.data.Code == 400) {
@@ -298,7 +299,7 @@ const infoCustomerRequest = () => {
 							$(e.target).removeAttr("disabled");
 						}
 					});
-				// }
+				}
 			});
 	}
 };
@@ -340,18 +341,29 @@ const recaptcha = () => {
 };
 
 const renderCustomerGame = () => {
-	document.querySelectorAll(".pagination li a").forEach((item) => {
-		item.addEventListener("click", (e: any) => {
-			e.preventDefault();
-			const url = e.target.getAttribute("data-url");
-			Axios.get(`${url}`).then((res: any) => {
-				console.log(res);
-				document.querySelector(
-					".customer-list__wrapper--inner .wrapper",
-				).innerHTML = `${res.data}`;
-			});
+	// document.querySelectorAll(".pagination li a").forEach((item) => {
+	// 	item.addEventListener("click", (e: any) => {
+	// 		e.preventDefault();
+	// 		const url = e.target.getAttribute("data-url");
+	// 		Axios.get(`${url}`).then((res: any) => {
+	// 			console.log(res);
+	// 			document.querySelector(
+	// 				".customer-list__wrapper--inner .wrapper",
+	// 			).innerHTML = `${res.data}`;
+	// 		});
+	// 	});
+	// });
+
+	$(document).on('click', '.pagination li a', function(e:any) {
+		e.preventDefault();
+		const url = e.target.getAttribute("data-url");
+		Axios.get(`${url}`).then((res: any) => {
+			console.log(res);
+			document.querySelector(
+				".customer-list__wrapper--inner .wrapper",
+			).innerHTML = `${res.data}`;
 		});
-	});
+	})
 };
 
 const checkPagination = () => {
