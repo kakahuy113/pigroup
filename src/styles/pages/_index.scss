@@ -459,6 +459,7 @@
 		&.active {
 			a {
 				font-family: Lato-Bold;
+				pointer-events: none;
 				text-decoration: none;
 				color: map-get($color, main-4);
 			}
@@ -470,6 +471,7 @@
 			&::before {
 				content: "";
 				position: absolute;
+				pointer-events: none;
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
