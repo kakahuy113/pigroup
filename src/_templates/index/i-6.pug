@@ -120,6 +120,8 @@
 				.popup__wrapper
 					.main-title-img.text-center
 						img.lazyload.blur-up(data-src="./assets/img/info-customer.png", alt="")
+					.sub-title.text-center
+						h2 Bạn đã trả lời đúng - vui lòng điền thông tin
 					.table-info-custom
 						form(action="")
 							.wrapper
@@ -137,8 +139,10 @@
 								.item
 									.field
 										label(for="san") Sàn:
-									.field-select.custom-select
+									.field-select
+										input(type="text" name="san")
 										select(name="san" id="san")
+											option(value="7") Chọn Sàn
 											option(value="1") Công Ty Cổ Phần ECOE Việt Nam
 											option(value="2") Công Ty TNHH ANYLAND Việt Nam
 											option(value="3") Công Ty Cổ Phần Bắt Động Sản PILAND

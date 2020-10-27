@@ -259,7 +259,7 @@ const infoCustomerRequest = () => {
 				const url = $(".complete button").attr("data-url");
 				const formData = new FormData();
 				const select: any = document.querySelector(
-					".field-select select",
+					".field-select input",
 				);
 				const responserRecaptcha: HTMLInputElement = document.querySelector(
 					".g-recaptcha",
@@ -278,7 +278,7 @@ const infoCustomerRequest = () => {
 				const valueToken = responserRecaptcha.value;
 				const nameRecaptcha = responserRecaptcha.getAttribute("name");
 				formData.append(nameRecaptcha, valueToken);
-				if ($(".table-info-custom form").valid() === true) {
+				// if ($(".table-info-custom form").valid() === true) {
 					// Axios.interceptors.request.use(config => {
 					// 	$(e.target).attr("disabled" , "disabled");
 					// 	return config;
@@ -298,7 +298,7 @@ const infoCustomerRequest = () => {
 							$(e.target).removeAttr("disabled");
 						}
 					});
-				}
+				// }
 			});
 	}
 };
@@ -390,7 +390,7 @@ const customSelect = () => {
 		b: any,
 		c: any;
 	/*look for any elements with the class "custom-select":*/
-	x = document.getElementsByClassName("custom-select");
+	x = document.getElementsByClassName("field-select");
 	l = x.length;
 	for (i = 0; i < l; i++) {
 		selElmnt = x[i].getElementsByTagName("select")[0];
@@ -399,6 +399,7 @@ const customSelect = () => {
 		a = document.createElement("DIV");
 		a.setAttribute("class", "select-selected");
 		a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+		
 		x[i].appendChild(a);
 		/*for each element, create a new DIV that will contain the option list:*/
 		b = document.createElement("DIV");
@@ -429,6 +430,7 @@ const customSelect = () => {
 							y[k].removeAttribute("class");
 						}
 						this.setAttribute("class", "same-as-selected");
+						document.querySelector<any>(".field-select input").value = this.innerHTML;
 						break;
 					}
 				}
@@ -442,6 +444,7 @@ const customSelect = () => {
       and open/close the current select box:*/
 			e.stopPropagation();
 			closeAllSelect(this);
+			checkformSan();
 			this.nextSibling.classList.toggle("select-hide");
 			this.classList.toggle("select-arrow-active");
 		});
@@ -476,6 +479,18 @@ const customSelect = () => {
 then close all select boxes:*/
 	document.addEventListener("click", closeAllSelect);
 };
+
+const checkformSan = () => {
+	const selectlength =  document.querySelectorAll(".field-select select option").length
+	const selectIndex = document.querySelector<any>("#san").selectedIndex
+	if(selectlength - 1 == selectIndex) {
+		document.querySelector<any>(".field-select input").value = ""
+		document.querySelector(".field-select").classList.add("active")
+		document.querySelector<any>(".field-select input").focus();
+	} else {
+		document.querySelector(".field-select").classList.remove("active")
+	}
+}
 
 window.onload = () => {
 	if (document.querySelector(".fake-button-recaptcha")) {
