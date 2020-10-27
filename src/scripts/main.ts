@@ -345,6 +345,7 @@ const renderCustomerGame = () => {
 			e.preventDefault();
 			const url = e.target.getAttribute("data-url");
 			Axios.get(`${url}`).then((res: any) => {
+				console.log(res);
 				document.querySelector(
 					".customer-list__wrapper--inner .wrapper",
 				).innerHTML = `${res.data}`;
