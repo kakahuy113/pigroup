@@ -10,7 +10,7 @@ const swiperMainBanner = () => {
 		speed: 2000,
 		// autoHeight: true,
 		loop: true,
-		simulateTouch: false,
+		// simulateTouch: false,
 		autoplay: {
 			delay: 2000,
 		},
