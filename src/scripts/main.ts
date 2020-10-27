@@ -347,7 +347,7 @@ const renderCustomerGame = () => {
 			Axios.get(`${url}`).then((res: any) => {
 				document.querySelector(
 					".customer-list__wrapper--inner .wrapper",
-				).innerHTML = `${res}`;
+				).innerHTML = `${res.data}`;
 			});
 		});
 	});
