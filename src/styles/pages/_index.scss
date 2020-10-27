@@ -77,6 +77,7 @@
 				font-size: 1.8rem;
 				font-family: Lato-Regular;
 				margin-bottom: 10px;
+				list-style-image: url(../assets/img/maker.png);
 			}
 
 			ul {
@@ -84,6 +85,9 @@
 				list-style: none;
 				li:first-child {
 					margin-top: 10px;
+				}
+				li {
+					list-style: none;
 				}
 			}
 		}
@@ -276,6 +280,7 @@
 				}
 				.custom-btn {
 					.playgame__wrapper {
+						border-radius: 30px;
 						&::after {
 							content: none;
 						}
@@ -515,11 +520,11 @@
 	// 		}
 	// 	}
 	// }
-	@media (max-width: 1024.98px) {
+	// @media (max-width: 1024.98px) {
 		.swiper-slide {
 			height: auto;
 		}
-	}
+	// }
 }
 .prize {
 	padding: 90px 0;
@@ -656,15 +661,31 @@
 		}
 	}
 	@media (max-width: 1024.98px) {
-		-ms-flex: 0 0 50%;
-		flex: 0 0 50%;
-		max-width: 50%;
+		&:not(:first-child) {
+			-ms-flex: 0 0 50%;
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+		&:first-child {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+			& > div {
+				max-width: 50%;
+				margin: 0 auto;
+			}
+		}
 	}
 	
 	@media (max-width: 575.98px) {
-		-ms-flex: 0 0 100%;
-		flex: 0 0 100%;
-		max-width: 100%;
+		-ms-flex: 0 0 100% !important;
+		flex: 0 0 100% !important;
+		max-width: 100% !important;
+		& > div {
+			width: 100% !important;
+			max-width: 100% !important;
+			margin: 0 auto;
+		}
 	}
 }
 .fancybox-button.fancybox-close-small {
@@ -849,7 +870,7 @@
 	label,
 	span {
 		color: map-get($color, main-8);
-		font-size: 2.5rem;
+		font-size: 2.4rem;
 		@media (max-width: 1024.98px) {
 			font-size: 1.8rem;
 		}
@@ -1044,7 +1065,7 @@
 				&::after {
 					content: "";
 					position: absolute;
-					background: url(../assets/img/false.png) no-repeat;
+					background: url(../assets/img/false.png) no-repeat !important;
 					background-size: 100% 100%;
 					top: 50%;
 					left: 50%;
@@ -1053,6 +1074,14 @@
 					transform: translate(-50%,-50%);
 				}
 			}
+		}
+	}
+	.answer-btn {
+		opacity: .5;
+		pointer-events: none;
+		&.active {
+			opacity: 1;	
+			pointer-events: all;
 		}
 	}
 }
@@ -1130,7 +1159,8 @@
 					}
 				}
 				.field-input,
-				.field-select {
+				.field-select
+				 {
 					-ms-flex: 0 0 78%;
 					flex: 0 0 68%;
 					max-width: 68%;
@@ -1149,35 +1179,28 @@
 						opacity: .5;
 					}
 					select {
+						overflow: hidden;
 						position: relative;
 						padding-right: 55px;
 						text-align: right;
 						text-align-last: right;
 						appearance: none;
+						max-width: 100%;
+						width: auto;
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
 						@media (max-width: 1024.98px) {
 							padding-right: 25px;
 						}
 						option {
-							width: 100%;
+							background: map-get($color, main-1);
 							overflow: hidden;
+							color: map-get($color, main-8);
 						}
 					}
 				}
 				.field-select {
-					&::after {
-						content: "";
-						width: 11px;
-						height: 6px;
-						position: absolute;
-						top: 50%;
-						transform: translateY(-50%);
-						right: 40px;
-						background: url(../assets/img/arrow.png) no-repeat;
-						background-size: 100% 100%;
-						@media (max-width: 1024.98px) {
-							right: 10px;
-						}
-					}
+				
 				}
 			}
 		}
@@ -1323,11 +1346,13 @@
 	flex-wrap: wrap;
 	align-items: center;
 	margin-bottom: 20px;
+	justify-content: center;
 	& > div {
 		-ms-flex: 0 0 50%;
 		flex: 0 0 50%;
 		max-width: 50%;
 		position: relative;
+		align-self: center;
 		.img-logo {
 			background: url(../assets/img/phieuruttham/logo-bg.png) no-repeat;
 			background-size: 100% 100%;
@@ -1339,6 +1364,18 @@
 			height: 154px;
 			pointer-events: none;
 		}
+		.item__wrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			h2 {
+				color: map-get($color, main-5);
+				font-size: 1.4rem;
+			}
+		}
+	}
+	.item--right {
+			border-right: 1px dashed #000000;
 	}
 	.item__wrapper {
 		position: relative;
@@ -1385,3 +1422,78 @@
 .phieu--detail {
 	height: 196px;
 }
+/*the container must be positioned relative:*/
+.custom-select {
+	position: relative;
+  }
+  
+  .custom-select select {
+	display: none; /*hide original SELECT element:*/
+  }
+  
+  .select-selected {
+	  height: 100%;
+	  width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0 15px 15px 0;
+    background: rgba(0,0,0,.3);
+    background-blend-mode: multiply;
+    color: rgba(255,255,255,.5);
+    font-family: Lato-Light;
+    font-size: 2.5rem;
+	opacity: .5;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 30px;
+  }
+  
+  /*style the arrow inside the select element:*/
+  .select-selected:after {
+	  
+	position: absolute;
+	content: "";
+	top: 50%;
+	right: 10px;
+	transform: translateY(-50%);
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
+  }
+  
+  /*point the arrow upwards when the select box is open (active):*/
+  .select-selected.select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	
+  }
+  
+  /*style the items (options), including the selected item:*/
+  .select-items div,.select-selected {
+	color: #ffffff;
+	border: 1px solid transparent;
+	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+	cursor: pointer;
+	user-select: none;
+	text-align: right;
+
+  }
+  
+  /*style items (options):*/
+  .select-items {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+  }
+  
+  /*hide the items when the select box is closed:*/
+  .select-hide {
+	display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+	background-color: rgba(0, 0, 0, 0.1);
+  }

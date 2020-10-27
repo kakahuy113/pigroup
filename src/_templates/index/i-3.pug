@@ -1,7 +1,7 @@
 section.program-rule(data-scroll-id="2")
 	.programe-rule__wrapper
 		.main--title--img.text-center 
-			img(src="./assets/img/programe-rule.png", alt="title")
+			img.lazyload.blur-up(data-src="./assets/img/programe-rule.png", alt="title")
 		.programe-rule--inner
 			.programe-rule__left
 				.container
@@ -29,6 +29,163 @@ section.program-rule(data-scroll-id="2")
 											li Liên 1: Khách giữ để đối chiếu
 											li Liên 2: Được bỏ vào thùng phiếu bốc thăm trúng thưởng
 									li Phiếu rút thăm may mắn sẽ được tính theo kết quả rút thăm trong ngày mở bán
+							.rule-content
+								.main-title-img.text-center
+									img.lazyload.blur-up(data-src="./assets/img/programe-rule.png", alt="")
+								.sub-title.text-center
+									p (V/v Chương trình rút thăm may mắn “An Khang Sum Vầy”)
+								p
+									!= "<span>1. Tên chương trình: </span>An Khang Sum Vầy"
+								p
+									!= "<span>2. Hình thức khuyến mại: </span>Rút thăm may mắn Theo “Phiếu rút thăm trúng thưởng” do Pi Home phát hành cho Khách hàng."
+								p
+									!= "<span>3. Khách hàng tham dự (đối tượng được rút thăm): </span></br>Tất cả khách hàng đã thực hiện chuyển cọc thành công đối với các sản phẩm Park 1 dự án Picity High Park và được ghi nhận trên hệ thống của Pi Home từ 01/10/2020 đến trước thời điểm thực hiện chương trình Rút thăm may mắn sẽ nhận được phiếu rút thăm tham gia chương trình <span>An Khang Sum Vầy</span>."
+								p
+									span 4.	Mục tiêu:
+									ul
+										li
+											p Chương trình là cơ hội quảng bá rộng rãi, truyền tải các giá trị sống đẳng cấp, cuộc sống xanh và đầy đủ tiện ích cùng các thế mạnh tại dự án Picity High Park đến khách hàng có nhu cầu ở thực lẫn nhà đầu tư.
+										li
+											p Tạo tương tác với khách hàng
+								p
+									!= "<span>5. Cơ cấu giải thưởng: </span>"
+								.prize-table
+									.title
+										.rank-title
+											p HẠNG MỤC
+										.num-title
+											p SỐ LƯỢNG
+										.price-title
+											p TRỊ GIÁ
+									.list-rank
+										.rank
+											p Giải nhất
+										.num
+											p 01
+										.price
+											p Giải thưởng trị giá 300.000.000 VNĐ
+									.list-rank
+										.rank 
+											p Giải nhì
+										.num
+											p 01
+										.price
+											p Giải thưởng trị giá 200.000.000 VNĐ
+									.list-rank
+										.rank
+											p Giải ba
+										.num
+											p 01
+										.price
+											p Giải thưởng trị giá 100.000.000 VNĐ
+								ul
+									li
+										p Giải thưởng được dùng để thanh toán các khoản đến hạn theo lịch thanh toán ghi nhận tại VBTT 
+								p
+									span Chú ý:
+								ul
+									li
+										p Tất cả các giải thưởng trên đã bao gồm thuế Thu nhập cá nhân.
+									li
+										p Phiếu rút thăm phải còn nguyên vẹn, đầy đủ thông tin, có con dấu và chữ ký của Pi Home.
+									li
+										p Trong trường hợp Khách hàng ủy quyền cho người đại diện (nhân viên tư vấn, người thân,… ) tham dự và rút thăm may mắn thì phải thực hiện ủy quyền bằng văn bản có chứng thực của Đơn vị liên kết đã ký hợp đồng môi giới với Pi Home. Khi tham dự rút thăm may mắn, khách hàng cần mang theo:
+										ul
+											li
+												p CNMD/CCCD/Hộ chiếu …: bản chính và 01 bản photo
+											li
+												p Giấy ủy quyền và CNMD/CCCD/Hộ chiếu …của người được ủy quyền: bản chính và 01 bản photo
+								p
+									span 6. Nội dung chi tiết thể lệ chương trình khuyến mãi:
+								p
+									span 6.1. Hình thức và điều kiện nhận giải thưởng đối với tất cả các giải:
+									p
+										span Hình thức tham gia:
+								ul
+									li
+										p Khách hàng trả lời 5 câu hỏi về dự án căn hộ resort "Picity High Park" trên Landing Page sự kiện “An Khang Sum Vầy"
+									li
+										p Tất cả khách hàng đạt yêu cầu tham dự chương trình “An Khang Sum Vầy” sẽ nhận được phiếu rút thăm may mắn từ Pi Home
+									li
+										p Mỗi sản phẩm chuyển cọc thành công sẽ nhận số lượng tương ứng với 1 phiếu rút thăm may mắn.
+								p
+									span Điều kiện nhận giải:
+								ul
+									li
+										p Khách hàng phải trả lời đúng 5 câu hỏi về dự án căn hộ resort "Picity High Park“
+									li
+										p Khách hàng phải ký và hoàn tất thanh toán theo Phiếu Đăng ký thông tin Khách hàng & sản phẩm (Phiếu ĐKTT) thành công trong ngày Giới thiệu sản phẩm 
+									li
+										p Khách hàng phải hoàn tất việc ký và thanh toán kỳ đầu tiên (đợt 1) của Văn Bản Thỏa Thuận trong theo quy định của Pi Home.
+									li
+										p Giải thưởng chỉ được sử dụng đích danh Khách hàng may mắn trên VBTT. Giá trị giải thưởng không có giá trị trong trường hợp chuyển giao, cho hoặc tặng cá nhân khác. Trong trường hợp khách hàng chuyển tên VBTT cho cá nhân khác, người đứng tên VBTT tiếp theo sẽ được tiếp tục hưởng thụ giá trị giải thưởng.
+								p
+									span 6.2. Quy định về cách thức xác định may mắn:
+								ul
+									li
+										p Cách thức xác định may mắn là rút thăm ngẫu nhiên dưới sự giám sát của đại diện Pi Home, sàn liên kết, đại diện các khách mời, khách hàng tham gia chương trình khuyến mại.
+								p
+									span 6.3. Cách thức đưa bằng chứng xác định may mắn vào sản phẩm khuyến mại: 
+								ul
+									li
+										p Một phiếu rút thăm may mắn gồm 2 liên: cách thức xác định trúng giải sẽ dựa trên việc đối chiếu số phiếu trên liên do khách hàng giữ với số phiếu trên liên do Pi Home giữ (là liên được rút thăm).
+								p
+									span 6.4. Quy định về tính hợp lệ của bằng chứng xác định may mắn:
+								ul
+									li
+										p Phiếu rút thăm hợp lệ phải có đầy đủ chữ ký của Pi Home. Ngoài ra, tên khách hàng phải trùng khớp với danh sách khách hàng đủ điều kiện rút thăm.
+									li
+										p Sau khi Phiếu rút thăm được mở ra, người trúng giải phải là người đã có tên trong danh sách khách hàng chuyển cọc thành công trên hệ thống của Pi Home. Ban tổ chức gồm giám sát Pi Home và giám sát sàn liên kết sẽ kiểm tra lại, đối chiếu và thông báo trực tiếp với những người đang có mặt.
+									li
+										p Trong trường hợp người trúng giải không đủ điều kiện trên thì xem như không hợp lệ và giải thưởng sẽ được thực hiện lại.
+									li
+										p Khách hàng có số phiếu trong phần đối chiếu trùng khớp với số phiếu được rút và có tên trong danh sách khách hàng chuyển cọc thành công trên hệ thống của Pi Home sẽ được mời lên nhận bảng giải thưởng và chụp hình kỷ niệm.
+									li
+										p Cho cùng 01 (một) giải thưởng trong thời gian 05 (năm) lần đọc số phiếu trúng giải nếu không có khách hàng nhận Ban Tổ chức sẽ hủy bỏ phiếu trúng giải và tiếp tục rút thăm lại cho giải thưởng không có khách hàng nhận.
+									li
+										p Phiếu rút thăm may mắn đã trúng giải không được tham dự rút thăm cho các lần tiếp theo.
+								p
+									span 6.5. Thông báo may mắn:
+								ul
+									li
+										p Trong  vòng  năm  (05)  ngày  làm  việc  sau  khi  xác  định  được  Khách  hàng  trúng  thưởng, Pi Home sẽ gửi thông báo may mắn đến Khách hàng và hướng dẫn về thời gian, địa  điểm, thủ tục nhận thưởng qua điện thoại, tin nhắn và “Thư thông báo kết quả may mắn” sẽ được gửi đến địa chỉ Khách hàng đã đăng ký với Pi Home.
+								p
+									span 6.6. Thời gian, địa điểm và cách thức và thủ tục trao thưởng:
+								ul
+									li
+										p
+											span Thời gian rút thăm:
+										ul
+											li
+												p Pi Home sẽ tiến hành tổ chức chương trình “An Khang Sum Vầy” song song với sự kiện Giới thiệu sản phẩm Park 1 phiên bản giới hạn của dự án Picity High Park.
+											li
+												p Thời gian sự kiện sẽ được Pi Home thông báo chính thức đối với từng khách hàng. (sẽ được cập nhật trong thông báo)
+									li
+										p Địa điểm làm hồ sơ nhận thưởng: Thời gian nhận thưởng sẽ được Pi Home thông báo chính thức đối với từng khách hàng khi khách hàng đã đủ điều kiện nhận giải đã nêu ở mục 5 (sẽ được cập nhật trong thông báo).
+									li
+										p Cách thức trao giải:  Khách hàng tham gia sự kiện “An Khang Sum Vầy” có phiếu rút thăm may mắn đúng quy định sẽ được cấp 01 (một) Biên bản xác nhận trúng thưởng.
+									li
+										p
+											span Điều kiện:
+										ul
+											li
+												p Khách hàng đến nhận giải mang theo CMND, Biên bản xác nhận trúng thưởng có xác nhận. Trong trường hợp khách hàng ủy quyền cho người khác đến nhận giải thì người được ủy quyền phải mang theo giấy ủy quyền được công chứng, giấy CMND photo của người trúng giải được công chứng và CMND của người được ủy quyền, giấy xác nhận may mắn có xác nhận của Pi Home.
+								p
+									span 7.	Các qui định khác
+								ul
+									li
+										p Khách hàng có trách nhiệm đóng thuế TNCN, các loại thuế phí khác liên quan đến việc nhận giải theo quy định.
+									li
+										p Pi Home được toàn quyền sử dụng hình ảnh và thông tin của khách hàng nhận giải cho mục đích truyền thông cho sản phẩm (quảng cáo, PR, TVC, phóng sự….)
+									li
+										p Thể lệ Chương trình này có thể thay đổi tại từng thời điểm theo toàn quyền quyết định của Pi Home sau khi đã thực hiện các thủ tục cần thiết theo quy định của pháp luật.
+									li
+										p Trong trường hợp vì lý do bất khả kháng (theo quy định của pháp luật), Pi Home có thể (trong phạm vi được pháp luật cho phép) hủy bỏ, kết thúc, thay đổi hoặc trì hoãn một phần hoặc toàn bộ Chương trình và/hoặc có thể loại ra khỏi Chương trình bất kỳ cá nhân nào trong bất kỳ trường hợp nào có liên quan đến việc gây rối, phá hoại hay gian lận trong Chương trình sau khi có sự đồng ý của cơ quan quản lý nhà nước hoặc theo quy định của pháp luật hiện tại về các trường hợp bất khả kháng.
+								.signature.text-center
+									p Thành Phố Hồ Chí Minh, ngày       tháng      năm 2020
+									p CÔNG TY CỔ PHẦN PI HOME
+									p GIÁM ĐỐC
+									p NGUYỄN THỊ THU THẢO
 							.rule--view
 								a(data-fancybox data-src="#program-rule" href="javascript:;").playgame__wrapper
 									.btn.btn-playgame 

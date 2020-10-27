@@ -27,7 +27,7 @@
 	filter: blur(10px);
 	transition: filter 1s;
 
-	&.lazy-loaded {
+	&.lazyloaded {
 		filter: blur(0);
 	}
 }
