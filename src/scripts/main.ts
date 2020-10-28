@@ -403,7 +403,7 @@ const customSelect = () => {
 		b: any,
 		c: any;
 	/*look for any elements with the class "custom-select":*/
-	x = document.getElementsByClassName("field-select");
+	x = document.getElementsByClassName("custom-select");
 	l = x.length;
 	for (i = 0; i < l; i++) {
 		selElmnt = x[i].getElementsByTagName("select")[0];
@@ -424,7 +424,8 @@ const customSelect = () => {
 			c.innerHTML = selElmnt.options[j].innerHTML;
 			c.addEventListener("click", function (e: any) {
 				/*when an item is clicked, update the original select box,
-        and the selected item:*/
+		and the selected item:*/
+				e.preventDefault();
 				var y: any, i: any, k: any, s: any, h: any, sl: any, yl: any;
 				s = this.parentNode.parentNode.getElementsByTagName(
 					"select",
@@ -454,8 +455,10 @@ const customSelect = () => {
 		x[i].appendChild(b);
 		a.addEventListener("click", function (e: any) {
 			/*when the select box is clicked, close any other select boxes,
-      and open/close the current select box:*/
+	  and open/close the current select box:*/
 			e.stopPropagation();
+			e.preventDefault();
+
 			closeAllSelect(this);
 			checkformSan();
 			this.nextSibling.classList.toggle("select-hide");
@@ -465,6 +468,7 @@ const customSelect = () => {
 	function closeAllSelect(elmnt: any) {
 		/*a function that will close all select boxes in the document,
   except the current select box:*/
+	  elmnt.preventDefault();
 		var x,
 			y,
 			i,
