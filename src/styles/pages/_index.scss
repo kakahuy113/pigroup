@@ -1373,7 +1373,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	margin-bottom: 20px;
+	margin-bottom: 1000px;
 	justify-content: center;
 	& > div {
 		-ms-flex: 0 0 50%;
@@ -1382,8 +1382,6 @@
 		position: relative;
 		align-self: center;
 		.img-logo {
-			background: url(../assets/img/phieuruttham/logo-bg.png) no-repeat;
-			background-size: 100% 100%;
 			position: absolute;
 			left: 50%;
 			top: 50%;
@@ -1446,9 +1444,7 @@
 		}
 	}
 }
-.phieu--detail {
-	height: 196px;
-}
+
 /*the container must be positioned relative:*/
 .field-select {
 	position: relative;
