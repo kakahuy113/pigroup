@@ -106,6 +106,7 @@ const initMenuMobile = () => {
 			menu.classList.toggle("active");
 		});
 };
+
 const scrollToSection = () => {
 	$("[data-scroll-to]").on("click", function (e: any) {
 		e.preventDefault();
@@ -139,23 +140,27 @@ const answerQuestions = () => {
 				child
 					.querySelector(".wrapper")
 					.addEventListener("click", () => {
+						child.querySelector("input").checked = true
 						item.querySelectorAll(".answer--item").forEach(
-							(child) => {
-								child.classList.remove("checked");
+							(allchild) => {
+								allchild.classList.remove("checked");
 							},
-						);
+						); 
 						child.classList.add("checked");
+						const checkedInput = document.querySelectorAll(
+							`#quiz-answer input[type=radio]:checked`,
+						);
+						console.log(checkedInput.length);
+						
+						if (checkedInput.length > 4) {
+							document
+								.querySelector(".answer-btn")
+								.classList.add("active");
+						}
 					});
-				child.addEventListener("click", (e) => {
-					const checkedInput = document.querySelectorAll(
-						`#quiz-answer input[type=radio]:checked`,
-					);
-					if (checkedInput.length > 4) {
-						document
-							.querySelector(".answer-btn")
-							.classList.add("active");
-					}
-				});
+				// child.addEventListener("click", (e) => {
+				
+				// });
 			});
 		});
 		document
@@ -182,6 +187,7 @@ const answerQuestions = () => {
 						src: "#info-customer",
 						type: "inline",
 						closeExisting: true,
+						touch: false
 					});
 				} else {
 					document
@@ -278,7 +284,7 @@ const infoCustomerRequest = () => {
 				const valueToken = responserRecaptcha.value;
 				const nameRecaptcha = responserRecaptcha.getAttribute("name");
 				formData.append(nameRecaptcha, valueToken);
-				if ($(".table-info-custom form").valid() === true) {
+				// if ($(".table-info-custom form").valid() === true) {
 					// Axios.interceptors.request.use(config => {
 					// 	$(e.target).attr("disabled" , "disabled");
 					// 	return config;
@@ -299,7 +305,7 @@ const infoCustomerRequest = () => {
 							$(e.target).removeAttr("disabled");
 						}
 					});
-				}
+				// }
 			});
 	}
 };
@@ -403,7 +409,7 @@ const customSelect = () => {
 		b: any,
 		c: any;
 	/*look for any elements with the class "custom-select":*/
-	x = document.getElementsByClassName("custom-select");
+	x = document.getElementsByClassName("field-select");
 	l = x.length;
 	for (i = 0; i < l; i++) {
 		selElmnt = x[i].getElementsByTagName("select")[0];
@@ -457,8 +463,6 @@ const customSelect = () => {
 			/*when the select box is clicked, close any other select boxes,
 	  and open/close the current select box:*/
 			e.stopPropagation();
-			e.preventDefault();
-
 			closeAllSelect(this);
 			checkformSan();
 			this.nextSibling.classList.toggle("select-hide");
@@ -468,7 +472,6 @@ const customSelect = () => {
 	function closeAllSelect(elmnt: any) {
 		/*a function that will close all select boxes in the document,
   except the current select box:*/
-	  elmnt.preventDefault();
 		var x,
 			y,
 			i,
