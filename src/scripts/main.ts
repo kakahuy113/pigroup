@@ -150,8 +150,6 @@ const answerQuestions = () => {
 						const checkedInput = document.querySelectorAll(
 							`#quiz-answer input[type=radio]:checked`,
 						);
-						console.log(checkedInput.length);
-						
 						if (checkedInput.length > 4) {
 							document
 								.querySelector(".answer-btn")
@@ -518,6 +516,13 @@ const checkformSan = () => {
 	}
 }
 
+const lengthInput = () => {
+	document.querySelectorAll("[data-val-length-max]").forEach(item => {
+		const length = item.getAttribute("data-val-length-max")
+		item.setAttribute("maxlength" , length)
+	})
+}
+
 window.onload = () => {
 	if (document.querySelector(".fake-button-recaptcha")) {
 		const button: HTMLElement = document.querySelector(
@@ -544,6 +549,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	renderCustomerGame();
 	checkPagination();
 	customSelect();
+	lengthInput();
 	fireworks();
 
 });
