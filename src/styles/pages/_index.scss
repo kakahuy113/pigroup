@@ -945,14 +945,14 @@
 	}
 	.answer--item {
 		margin-bottom: 20px;
-		padding-left: 135px;
+		padding-left: 22%;
 		@media (max-width: 1024.98px) {
 			margin-bottom: 5px;
 			padding-left: 14%;
 		}
 		.wrapper {
 			display: inline-flex;
-			align-items: center;
+			// align-items: center;
 			transition: 0.5 all ease-in-out;
 			input {
 				transition: 0.5s all ease-in-out;
@@ -961,6 +961,7 @@
 				-ms-flex: 0 0 19px;
 				flex: 0 0 19px;
 				max-width: 19px;
+				margin-top: 4px;
 			}
 		}
 		label {
@@ -1157,7 +1158,7 @@
 						font-size: 2rem;
 					}
 					@media (max-width: 575.98px) {
-						font-size: 1.2rem;
+						font-size: 1rem;
 					}
 				}
 				.field-input,
@@ -1272,7 +1273,8 @@
 	overflow-y: hidden;
 	padding: 100px 0 100px 0;
 	background: url(../assets/img/bg-firework.png) no-repeat;
-	background-size: 100% 100%;
+	background-size: cover;
+	background-position: center;
 	@media (max-width: 1440.98px) {
 		overflow-y: auto;
 		padding: 100px 0;
@@ -1455,66 +1457,6 @@
 	}
 }
 
-// .custom-select {
-// 	position: relative;
-// 	font-family: Arial;
-//   }
-  
-//   .custom-select select {
-// 	display: none; /*hide original SELECT element:*/
-//   }
-  
-//   .select-selected {
-// 	background-color: DodgerBlue;
-//   }
-  
-//   /*style the arrow inside the select element:*/
-//   .select-selected:after {
-// 	position: absolute;
-// 	content: "";
-// 	top: 14px;
-// 	right: 10px;
-// 	width: 0;
-// 	height: 0;
-// 	border: 6px solid transparent;
-// 	border-color: #fff transparent transparent transparent;
-//   }
-  
-//   /*point the arrow upwards when the select box is open (active):*/
-//   .select-selected.select-arrow-active:after {
-// 	border-color: transparent transparent #fff transparent;
-// 	top: 7px;
-//   }
-  
-//   /*style the items (options), including the selected item:*/
-//   .select-items div,.select-selected {
-// 	color: #ffffff;
-// 	padding: 8px 16px;
-// 	border: 1px solid transparent;
-// 	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-// 	cursor: pointer;
-// 	user-select: none;
-//   }
-  
-//   /*style items (options):*/
-//   .select-items {
-// 	position: absolute;
-// 	background-color: DodgerBlue;
-// 	top: 100%;
-// 	left: 0;
-// 	right: 0;
-// 	z-index: 99;
-//   }
-  
-//   /*hide the items when the select box is closed:*/
-//   .select-hide {
-// 	display: none;
-//   }
-  
-//   .select-items div:hover, .same-as-selected {
-// 	background-color: rgba(0, 0, 0, 0.1);
-//   }
-
 /*the container must be positioned relative:*/
 .field-select {
 	position: relative;
@@ -1541,7 +1483,7 @@
 	justify-content: flex-end;
 	padding-right: 30px;
 	@media (max-width: 767.98px) {
-		font-size: 1.5rem;
+		font-size: 1.3rem ;
 	}
 }
 

@@ -284,7 +284,7 @@ const infoCustomerRequest = () => {
 				const valueToken = responserRecaptcha.value;
 				const nameRecaptcha = responserRecaptcha.getAttribute("name");
 				formData.append(nameRecaptcha, valueToken);
-				// if ($(".table-info-custom form").valid() === true) {
+				if ($(".table-info-custom form").valid() === true) {
 					// Axios.interceptors.request.use(config => {
 					// 	$(e.target).attr("disabled" , "disabled");
 					// 	return config;
@@ -301,11 +301,17 @@ const infoCustomerRequest = () => {
 							});
 						}
 						if (res.data.Code == 400) {
-							alert(`${res.data.Message}`);
-							$(e.target).removeAttr("disabled");
+							document.querySelector(
+								"#noti-2 p",
+							).textContent = res.data.Result;
+							$.fancybox.open({
+								src: "#noti-2",
+								type: "inline",
+							});
+						
 						}
 					});
-				// }
+				}
 			});
 	}
 };
