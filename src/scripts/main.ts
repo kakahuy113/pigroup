@@ -295,7 +295,15 @@ const infoCustomerRequest = () => {
 							$.fancybox.open({
 								src: "#congratulation",
 								type: "inline",
-								closeExisting: true
+								closeExisting: true,
+								touch: false,
+								opts : {
+									afterShow : function() {
+										document.querySelector("#congratulation button").addEventListener("click" , (e) => {
+											window.location.reload();
+										})
+									}
+								}
 							});
 						}
 						if (res.data.Code == 400) {
