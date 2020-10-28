@@ -972,24 +972,24 @@
 			// @media (max-width: 575.98px) {
 			// 	align-items: center;
 			// }
-			transition: 0.5s all ease-in-out;
+			transition:.1s all ease-in-out;
 			@media (max-width: 767.98px) {
 				// align-items: center;
 			}
 			input {
-				transition: 0.5s all ease-in-out;
+				transition:.1s all ease-in-out;
 				width: 19px;
 				height: 19px;
 				-ms-flex: 0 0 19px;
 				flex: 0 0 19px;
 				max-width: 19px;
 				@media (max-width: 767.98px) {
-					width: 9px;
-					height: 9px;
-					-ms-flex: 0 0 9px;
-					flex: 0 0 9px;
-					max-width: 9px;
-					margin-top: 5px;
+					width: 12px;
+					height: 12px;
+					-ms-flex: 0 0 12px;
+					flex: 0 0 12px;
+					max-width: 12px;
+					margin-top: 4px;
 				}
 				@media (min-width: 767.68px) {
 					margin-top: 4px;
@@ -998,7 +998,7 @@
 		}
 		label {
 			padding-left: 30px;
-			transition: 0.5s all ease-in-out;
+			transition:.1s all ease-in-out;
 		}
 		&.checked {
 			.wrapper {
@@ -1007,7 +1007,7 @@
 				padding: 0 10px;
 				border-radius: 17px;
 				border: 1px solid map-get($color, main-4);
-				transition: 0.5s all ease-in-out;
+				transition: 0.1s all ease-in-out;
 				font-family: Lato-Bold;
 			}
 
@@ -1023,7 +1023,7 @@
 			}
 			label {
 				color: map-get($color, main-4);
-				transition: 0.5s all ease-in-out;
+				transition: 0.1s all ease-in-out;
 			}
 		}
 		&.active {
@@ -1033,12 +1033,12 @@
 				padding: 0 10px;
 				border-radius: 17px;
 				border: 1px solid map-get($color, main-4);
-				transition: 0.5s all ease-in-out;
+				transition: 0.1s all ease-in-out;
 				font-family: Lato-Bold;
 			}
 			label {
 				color: map-get($color, main-4);
-				transition: 0.5s all ease-in-out;
+				transition: 0.1s all ease-in-out;
 			}
 			input[type="radio"] {
 				position: relative;
@@ -1058,13 +1058,13 @@
 		}
 		&.active-hint {
 			label {
-				transition: 0.5s all ease-in-out;
+				transition: 0.1s all ease-in-out;
 				color: map-get($color, main-4);
 			}
 			input[type="radio"] {
 				position: relative;
 				&::after {
-					transition: 0.5s all ease-in-out;
+					transition: 0.1s all ease-in-out;
 					content: "";
 					position: absolute;
 					background: map-get($color, main-4) no-repeat;
