@@ -303,7 +303,7 @@ const infoCustomerRequest = () => {
 						if (res.data.Code == 400) {
 							document.querySelector(
 								"#noti-2 p",
-							).textContent = res.data.Result;
+							).textContent = res.data.Message;
 							$.fancybox.open({
 								src: "#noti-2",
 								type: "inline",
