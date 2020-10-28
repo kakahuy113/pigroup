@@ -1366,15 +1366,19 @@
 		}
 	}
 }
-.phieuruttham {
-	padding-top: 150px;
+.phieuruttham__wrapper {
+	padding-top: 300px;
 }
 .phieu--item {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	margin-bottom: 1000px;
+	padding-bottom: 1000px;
 	justify-content: center;
+	.item--logo {
+		padding-bottom: 30px;
+		
+	}
 	& > div {
 		-ms-flex: 0 0 50%;
 		flex: 0 0 50%;
@@ -1402,6 +1406,12 @@
 	}
 	.item--right {
 		border-right: 1px dashed #000000;
+	}
+	.item--left {
+		.item--logo {
+			align-self: flex-start;
+			padding-left: 45px;
+		}
 	}
 	.item__wrapper {
 		position: relative;
