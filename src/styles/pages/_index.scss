@@ -1211,7 +1211,7 @@
 						appearance: none;
 						
 						border: none;
-						color: rgba($color: #ffffff, $alpha: 0.5);
+						color: #ffffff;
 						height: 100%;
 						width: 100%;
 						background: rgba($color: #000000, $alpha: 0.3);
@@ -1219,7 +1219,7 @@
 						border-radius: 0 15px 15px 0;
 						font-size: 2.5rem;
 						font-family: Lato-Light;
-						opacity: 0.7;
+						opacity: 1;
 					}
 					select {
 						overflow: hidden;
@@ -1505,10 +1505,9 @@
 	border-radius: 0 15px 15px 0;
 	background: rgba(0, 0, 0, 0.3);
 	background-blend-mode: multiply;
-	color: rgba(255, 255, 255, 0.5);
+	color: #ffffff;
 	font-family: Lato-Light;
 	font-size: 2.5rem;
-	opacity: 0.9;
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
