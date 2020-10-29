@@ -1043,7 +1043,7 @@
 			input[type="radio"] {
 				position: relative;
 				&::after {
-					background: url(../assets/img/check.png) no-repeat !important;
+					background: url(../assets/img/check.png) no-repeat;
 					content: "";
 					position: absolute;
 					background-size: 100% 100%;
@@ -1091,7 +1091,7 @@
 				&::after {
 					content: "";
 					position: absolute;
-					background: url(../assets/img/false.png) no-repeat !important;
+					background: url(../assets/img/false.png) no-repeat;
 					background-size: 100% 100%;
 					top: 50%;
 					left: 50%;

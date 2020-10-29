@@ -209,20 +209,13 @@ const answerQuestions = () => {
 							if (temp.getAttribute("istrue") == "true") {
 								parent.classList.add("active-hint");
 							}
-							//    parent.addEventListener("click" , (e:any) => {
-							// 	   if ( parent.querySelector("input").checked) {
-							// 		   parent.classList.add("active")
-							// 	   }
-							// 	   document.querySelectorAll(".answer--item").forEach(parent => {
-							// 		   const temp = parent.querySelector("input");
-							// 		   if ( parent.querySelector("input").checked) {
-							// 			   parent.classList.add("active")
-							// 		   }
-							// 		   if(temp.getAttribute("istrue") == "false") {
-							// 			   parent.classList.remove("active")
-							// 		}
-							// 	   })
-							//    })
+							
+							if(parent.classList.contains("checked") &&
+								parent.classList.contains("active") &&
+								parent.classList.contains("active-hint")) {
+									parent.classList.remove("active-hint")
+							}
+
 							document
 								.querySelectorAll(".answer")
 								.forEach((item) => {
@@ -239,6 +232,7 @@ const answerQuestions = () => {
 														"active",
 													);
 												});
+												child.classList.remove("active-hint");
 												child.classList.add("active");
 											});
 									});
