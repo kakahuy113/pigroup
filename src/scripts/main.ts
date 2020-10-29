@@ -215,7 +215,6 @@ const answerQuestions = () => {
 								parent.classList.contains("active-hint")) {
 									parent.classList.remove("active-hint")
 							}
-
 							document
 								.querySelectorAll(".answer")
 								.forEach((item) => {
